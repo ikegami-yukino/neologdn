@@ -1,6 +1,8 @@
 neologdn
 ===========
 
+|travis|
+
 neologdn is a Japanese text normalizer for `mecab-neologd <https://github.com/neologd/mecab-ipadic-neologd>`_.
 
 The normalization is based on the neologd's rules:
@@ -71,3 +73,7 @@ License
 
 Apache Software License.
 
+
+.. |travis| image:: https://travis-ci.org/ikegami-yukino/neologdn.svg?branch=master
+    :target: https://travis-ci.org/ikegami-yukino/neologdn
+    :alt: travis-ci.org
