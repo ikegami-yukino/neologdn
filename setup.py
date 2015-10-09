@@ -11,7 +11,7 @@ setup(
     name='neologdn',
     version=version,
     description='Japanese text normalizer for mecab-neologd',
-    long_description=open('README.rst').read(),
+    long_description=open('README.rst').read()+open('CHANGES.rst').read(),
     author='Yukino Ikegami',
     author_email='yknikgm@gmail.com',
     url='http://github.com/ikegami-yukino/neologdn',
