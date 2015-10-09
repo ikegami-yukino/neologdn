@@ -8,8 +8,8 @@ from libc.stdlib cimport malloc, free
 from libcpp.unordered_map cimport unordered_map
 from libcpp.unordered_set cimport unordered_set
 
-VERSION = (0, 1)
-__version__ = '0.1'
+VERSION = (0, 1, 1)
+__version__ = '0.1.1'
 
 ASCII = (
     ('ａ', 'a'), ('ｂ', 'b'), ('ｃ', 'c'), ('ｄ', 'd'), ('ｅ', 'e'),
