@@ -11,7 +11,7 @@ https://github.com/neologd/mecab-ipadic-neologd/wiki/Regexp.ja
 
 Contributions are welcome!
 
-NOTE: Installing this module requires C++ compiler.
+NOTE: Installing this module requires C++11 compiler.
 
 Installation
 ------------
