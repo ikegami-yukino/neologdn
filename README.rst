@@ -1,7 +1,7 @@
 neologdn
 ===========
 
-|travis|
+|travis| |downloads| |version| |license|
 
 neologdn is a Japanese text normalizer for `mecab-neologd <https://github.com/neologd/mecab-ipadic-neologd>`_.
 
@@ -77,3 +77,16 @@ Apache Software License.
 .. |travis| image:: https://travis-ci.org/ikegami-yukino/neologdn.svg?branch=master
     :target: https://travis-ci.org/ikegami-yukino/neologdn
     :alt: travis-ci.org
+
+.. |downloads| image:: https://img.shields.io/pypi/dm/neologdn.svg
+    :target: http://pypi.python.org/pypi/neologdn/
+    :alt: downloads
+
+.. |version| image:: https://img.shields.io/pypi/v/neologdn.svg
+    :target: http://pypi.python.org/pypi/neologdn/
+    :alt: latest version
+
+.. |license| image:: https://img.shields.io/pypi/l/neologdn.svg
+    :target: http://pypi.python.org/pypi/neologdn/
+    :alt: license
+
