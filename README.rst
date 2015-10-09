@@ -6,9 +6,10 @@ neologdn is a Japanese text normalizer for `mecab-neologd <https://github.com/ne
 The normalization is based on the neologd's rules:
 https://github.com/neologd/mecab-ipadic-neologd/wiki/Regexp.ja
 
+
 Contributions are welcome!
 
-NOTE: This module requires C++ compiler.
+NOTE: Installing this module requires C++ compiler.
 
 Installation
 ------------
@@ -39,6 +40,30 @@ Usage
     # => 'PRML副読本'
     neologdn.normalize(" Natural Language Processing ")
     # => 'Natural Language Processing'
+
+
+Benchmark
+----------
+
+.. code:: python
+
+    # Sample code from
+    # https://github.com/neologd/mecab-ipadic-neologd/wiki/Regexp.ja#python-written-by-hideaki-t--overlast
+    import normalize_neologd
+
+    %timeit normalize(normalize_neologd.normalize_neologd)
+    # => 1000 loops, best of 3: 1.18 ms per loop
+
+
+    import neologdn
+    %timeit normalize(neologdn.normalize)
+    # => 10000 loops, best of 3: 140 µs per loop
+
+
+neologdn is about x10 faster than sample code.
+
+details are described as the below notebook:
+https://github.com/ikegami-yukino/neologdn/blob/master/benchmark/benchmark.ipynb
 
 
 License
