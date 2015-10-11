@@ -15,7 +15,7 @@ setup(
     author='Yukino Ikegami',
     author_email='yknikgm@gmail.com',
     url='http://github.com/ikegami-yukino/neologdn',
-    ext_modules=[Extension('neologdn', ['neologdn.cpp'], language='c++')],
+    ext_modules=[Extension('neologdn', ['neologdn.cpp'], language='c++', extra_compile_args=["-std=c++11"])],
     license='Apache Software License',
     keywords=['japanese', 'MeCab'],
     classifiers=(
