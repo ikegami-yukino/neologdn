@@ -1,11 +1,13 @@
 # -*- coding: utf-8 -*-
+from codecs import open
 import re
 from distutils.core import setup, Extension
 
 
-with open('neologdn.cpp', 'r') as f:
+with open('neologdn.pyx', 'r', encoding='utf8') as f:
     version = re.compile(
         r".*__version__ = '(.*?)'", re.S).match(f.read()).group(1)
+
 
 setup(
     name='neologdn',
