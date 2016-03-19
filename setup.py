@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from codecs import open
 import re
-from distutils.core import setup, Extension
+from setuptools import setup, Extension
 
 
 with open('neologdn.pyx', 'r', encoding='utf8') as f:
@@ -34,6 +34,6 @@ setup(
         'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
-        'Topic :: Text Processing :: Linguistic',
+        'Topic :: Text Processing :: Linguistic'
     )
 )
