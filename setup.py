@@ -13,11 +13,13 @@ setup(
     name='neologdn',
     version=version,
     description='Japanese text normalizer for mecab-neologd',
-    long_description=open('README.rst').read()+open('CHANGES.rst').read(),
+    long_description=open('README.rst', encoding='utf8').read(
+    ) + open('CHANGES.rst', encoding='utf8').read(),
     author='Yukino Ikegami',
     author_email='yknikgm@gmail.com',
     url='http://github.com/ikegami-yukino/neologdn',
-    ext_modules=[Extension('neologdn', ['neologdn.cpp'], language='c++', extra_compile_args=["-std=c++11"])],
+    ext_modules=[Extension('neologdn', ['neologdn.cpp'],
+                           language='c++', extra_compile_args=["-std=c++11"])],
     license='Apache Software License',
     keywords=['japanese', 'MeCab'],
     classifiers=(
