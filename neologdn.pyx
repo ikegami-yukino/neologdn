@@ -101,13 +101,12 @@ for c in map(chr_func, range(128)):
 del ASCII, KANA, DIGIT, KANA_TEN, KANA_MARU, char_codes, version_info, chr_func
 
 
-cpdef unicode normalize(unicode text, int repeat=0):
+cpdef unicode normalize(unicode text):
     cdef Py_UNICODE *buf = <Py_UNICODE *>malloc(sizeof(Py_UNICODE) * (len(text) + 1))
 
     cdef Py_UNICODE c, prev = '\0'
     cdef int pos = 0
     cdef bint lattin_space = False
-    cdef int repeat_count = 1
 
     for c in text:
         if c in SPACE:
@@ -144,13 +143,6 @@ cpdef unicode normalize(unicode text, int repeat=0):
                 if lattin_space and blocks.count(c):
                     pos -= 1
                 lattin_space = False
-                if repeat:
-                    if c == prev:
-                        if repeat_count >= repeat:
-                            continue
-                        repeat_count += 1
-                    else:
-                        repeat_count = 1
                 buf[pos] = c
         prev = c
         pos += 1
