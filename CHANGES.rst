@@ -10,7 +10,7 @@ CHANGES
 ----------------------------
 
 - Support Windows
-- Explicitly specify to -std=c++11 in build (This bug is reported by id774. Many thanks)
+- Explicitly specify to -std=c++11 in build (Many thanks id774)
 
 0.1.1 (2015-10-10)
 ----------------------------
