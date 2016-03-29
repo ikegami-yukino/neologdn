@@ -4,17 +4,13 @@ import re
 from setuptools import setup, Extension
 
 
-with open('neologdn.pyx', 'r', encoding='utf8') as f:
+with open('neologdn.cpp', 'r', encoding='utf8') as f:
     version = re.compile(
         r".*__version__ = '(.*?)'", re.S).match(f.read()).group(1)
-
 
 setup(
     name='neologdn',
     version=version,
-    description='Japanese text normalizer for mecab-neologd',
-    long_description=open('README.rst', encoding='utf8').read(
-    ) + open('CHANGES.rst', encoding='utf8').read(),
     author='Yukino Ikegami',
     author_email='yknikgm@gmail.com',
     url='http://github.com/ikegami-yukino/neologdn',
@@ -37,5 +33,9 @@ setup(
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
         'Topic :: Text Processing :: Linguistic'
-    )
+    ),
+    description='Japanese text normalizer for mecab-neologd',
+    long_description='%s\n\n%s' % (open('README.rst', 'r', encoding='utf8').read(),
+                                   open('CHANGES.rst', 'r', encoding='utf8').read()
+                                   ),
 )
