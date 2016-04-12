@@ -42,6 +42,8 @@ Usage
     # => 'PRML副読本'
     neologdn.normalize(" Natural Language Processing ")
     # => 'Natural Language Processing'
+    neologdn.normalize("かわいいいいいいいいい", repeat=6)
+    # => 'かわいいいいいい'
 
 
 Benchmark
