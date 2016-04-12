@@ -1,6 +1,11 @@
 CHANGES
 ========
 
+0.2 (2016-04-12)
+----------------------------
+
+- Add lengthened expression (repeating character) threshold
+
 0.1.2 (2016-03-29)
 ----------------------------
 

@@ -8,8 +8,8 @@ from libc.stdlib cimport malloc, free
 from libcpp.unordered_map cimport unordered_map
 from libcpp.unordered_set cimport unordered_set
 
-VERSION = (0, 1, 2)
-__version__ = '0.1.2'
+VERSION = (0, 2)
+__version__ = '0.2'
 
 ASCII = (
     ('ａ', 'a'), ('ｂ', 'b'), ('ｃ', 'c'), ('ｄ', 'd'), ('ｅ', 'e'),
@@ -101,12 +101,13 @@ for c in map(chr_func, range(128)):
 del ASCII, KANA, DIGIT, KANA_TEN, KANA_MARU, char_codes, version_info, chr_func
 
 
-cpdef unicode normalize(unicode text):
+cpdef unicode normalize(unicode text, int repeat=0):
     cdef Py_UNICODE *buf = <Py_UNICODE *>malloc(sizeof(Py_UNICODE) * (len(text) + 1))
 
     cdef Py_UNICODE c, prev = '\0'
     cdef int pos = 0
     cdef bint lattin_space = False
+    cdef int repeat_count = 1
 
     for c in text:
         if c in SPACE:
@@ -143,6 +144,13 @@ cpdef unicode normalize(unicode text):
                 if lattin_space and blocks.count(c):
                     pos -= 1
                 lattin_space = False
+                if repeat:
+                    if c == prev:
+                        if repeat_count >= repeat:
+                            continue
+                        repeat_count += 1
+                    else:
+                        repeat_count = 1
                 buf[pos] = c
         prev = c
         pos += 1

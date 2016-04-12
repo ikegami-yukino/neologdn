@@ -32,6 +32,10 @@ class TestNeologdn(unittest.TestCase):
         self.assertEqual(normalize(u'あ﹣－ｰ—―─━ー'), u"あー")
         self.assertEqual(normalize(u'チルダ~∼∾〜〰～'), u"チルダ")
 
+    def test_normalize_lengthened(self):
+        self.assertEqual(normalize("うまああああああああああああい", repeat=7), "うまあああああああい")
+        self.assertEqual(normalize("かわいいいいいるい", repeat=6), "かわいいいいいるい")
+
 
 if __name__ == '__main__':
     unittest.main()
