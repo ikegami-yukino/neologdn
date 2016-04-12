@@ -56,12 +56,12 @@ Benchmark
     import normalize_neologd
 
     %timeit normalize(normalize_neologd.normalize_neologd)
-    # => 1000 loops, best of 3: 1.18 ms per loop
+    # => 1000 loops, best of 3: 1.21 ms per loop
 
 
     import neologdn
     %timeit normalize(neologdn.normalize)
-    # => 10000 loops, best of 3: 140 µs per loop
+    # => 10000 loops, best of 3: 145 µs per loop
 
 
 neologdn is about x10 faster than sample code.
