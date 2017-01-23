@@ -761,7 +761,6 @@ static char __pyx_k__2[] = "\357\275\201";
 static char __pyx_k__4[] = "\357\275\202";
 static char __pyx_k__6[] = "\357\275\203";
 static char __pyx_k__8[] = "\357\275\204";
-static char __pyx_k_0_2[] = "0.2";
 static char __pyx_k__10[] = "\357\275\205";
 static char __pyx_k__12[] = "\357\275\206";
 static char __pyx_k__14[] = "\357\275\207";
@@ -1064,6 +1063,7 @@ static char __pyx_k__490[] = "\343\200\200";
 static char __pyx_k_main[] = "__main__";
 static char __pyx_k_test[] = "__test__";
 static char __pyx_k_text[] = "text";
+static char __pyx_k_0_2_1[] = "0.2.1";
 static char __pyx_k_ASCII[] = "ASCII";
 static char __pyx_k_DIGIT[] = "DIGIT";
 static char __pyx_k_SPACE[] = "SPACE";
@@ -1087,7 +1087,7 @@ static char __pyx_k_itertools[] = "itertools";
 static char __pyx_k_char_codes[] = "char_codes";
 static char __pyx_k_version_info[] = "version_info";
 static PyObject *__pyx_kp_u_0;
-static PyObject *__pyx_kp_u_0_2;
+static PyObject *__pyx_kp_u_0_2_1;
 static PyObject *__pyx_kp_u_1;
 static PyObject *__pyx_kp_u_2;
 static PyObject *__pyx_kp_u_3;
@@ -1480,6 +1480,7 @@ static PyObject *__pyx_n_u_y;
 static PyObject *__pyx_n_u_z;
 static PyObject *__pyx_pf_8neologdn_normalize(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_text, int __pyx_v_repeat); /* proto */
 static PyObject *__pyx_int_0;
+static PyObject *__pyx_int_1;
 static PyObject *__pyx_int_2;
 static PyObject *__pyx_int_3;
 static PyObject *__pyx_int_128;
@@ -2093,7 +2094,7 @@ static PyObject *__pyx_f_8neologdn_normalize(PyObject *__pyx_v_text, CYTHON_UNUS
  *             elif c in TILDES:
  *                 continue             # <<<<<<<<<<<<<<
  *             else:
- *                 if c == '':
+ *                 if c == '' and kana_ten_map.count(prev):
  */
         goto __pyx_L3_continue;
 
@@ -2109,28 +2110,36 @@ static PyObject *__pyx_f_8neologdn_normalize(PyObject *__pyx_v_text, CYTHON_UNUS
       /* "neologdn.pyx":136
  *                 continue
  *             else:
- *                 if c == '':             # <<<<<<<<<<<<<<
+ *                 if c == '' and kana_ten_map.count(prev):             # <<<<<<<<<<<<<<
  *                     pos -= 1
  *                     c = kana_ten_map[prev]
  */
       /*else*/ {
-        __pyx_t_10 = ((__pyx_v_c == 0xFF9E) != 0);
+        __pyx_t_11 = ((__pyx_v_c == 0xFF9E) != 0);
+        if (__pyx_t_11) {
+        } else {
+          __pyx_t_10 = __pyx_t_11;
+          goto __pyx_L16_bool_binop_done;
+        }
+        __pyx_t_11 = (__pyx_v_8neologdn_kana_ten_map.count(__pyx_v_prev) != 0);
+        __pyx_t_10 = __pyx_t_11;
+        __pyx_L16_bool_binop_done:;
         if (__pyx_t_10) {
 
           /* "neologdn.pyx":137
  *             else:
- *                 if c == '':
+ *                 if c == '' and kana_ten_map.count(prev):
  *                     pos -= 1             # <<<<<<<<<<<<<<
  *                     c = kana_ten_map[prev]
- *                 elif c == '':
+ *                 elif c == '' and kana_maru_map.count(prev):
  */
           __pyx_v_pos = (__pyx_v_pos - 1);
 
           /* "neologdn.pyx":138
- *                 if c == '':
+ *                 if c == '' and kana_ten_map.count(prev):
  *                     pos -= 1
  *                     c = kana_ten_map[prev]             # <<<<<<<<<<<<<<
- *                 elif c == '':
+ *                 elif c == '' and kana_maru_map.count(prev):
  *                     pos -= 1
  */
           __pyx_v_c = (__pyx_v_8neologdn_kana_ten_map[__pyx_v_prev]);
@@ -2138,7 +2147,7 @@ static PyObject *__pyx_f_8neologdn_normalize(PyObject *__pyx_v_text, CYTHON_UNUS
           /* "neologdn.pyx":136
  *                 continue
  *             else:
- *                 if c == '':             # <<<<<<<<<<<<<<
+ *                 if c == '' and kana_ten_map.count(prev):             # <<<<<<<<<<<<<<
  *                     pos -= 1
  *                     c = kana_ten_map[prev]
  */
@@ -2148,16 +2157,24 @@ static PyObject *__pyx_f_8neologdn_normalize(PyObject *__pyx_v_text, CYTHON_UNUS
         /* "neologdn.pyx":139
  *                     pos -= 1
  *                     c = kana_ten_map[prev]
- *                 elif c == '':             # <<<<<<<<<<<<<<
+ *                 elif c == '' and kana_maru_map.count(prev):             # <<<<<<<<<<<<<<
  *                     pos -= 1
  *                     c = kana_maru_map[prev]
  */
-        __pyx_t_10 = ((__pyx_v_c == 0xFF9F) != 0);
+        __pyx_t_11 = ((__pyx_v_c == 0xFF9F) != 0);
+        if (__pyx_t_11) {
+        } else {
+          __pyx_t_10 = __pyx_t_11;
+          goto __pyx_L18_bool_binop_done;
+        }
+        __pyx_t_11 = (__pyx_v_8neologdn_kana_maru_map.count(__pyx_v_prev) != 0);
+        __pyx_t_10 = __pyx_t_11;
+        __pyx_L18_bool_binop_done:;
         if (__pyx_t_10) {
 
           /* "neologdn.pyx":140
  *                     c = kana_ten_map[prev]
- *                 elif c == '':
+ *                 elif c == '' and kana_maru_map.count(prev):
  *                     pos -= 1             # <<<<<<<<<<<<<<
  *                     c = kana_maru_map[prev]
  *                 elif conversion_map.count(c):
@@ -2165,7 +2182,7 @@ static PyObject *__pyx_f_8neologdn_normalize(PyObject *__pyx_v_text, CYTHON_UNUS
           __pyx_v_pos = (__pyx_v_pos - 1);
 
           /* "neologdn.pyx":141
- *                 elif c == '':
+ *                 elif c == '' and kana_maru_map.count(prev):
  *                     pos -= 1
  *                     c = kana_maru_map[prev]             # <<<<<<<<<<<<<<
  *                 elif conversion_map.count(c):
@@ -2176,7 +2193,7 @@ static PyObject *__pyx_f_8neologdn_normalize(PyObject *__pyx_v_text, CYTHON_UNUS
           /* "neologdn.pyx":139
  *                     pos -= 1
  *                     c = kana_ten_map[prev]
- *                 elif c == '':             # <<<<<<<<<<<<<<
+ *                 elif c == '' and kana_maru_map.count(prev):             # <<<<<<<<<<<<<<
  *                     pos -= 1
  *                     c = kana_maru_map[prev]
  */
@@ -2223,11 +2240,11 @@ static PyObject *__pyx_f_8neologdn_normalize(PyObject *__pyx_v_text, CYTHON_UNUS
         if (__pyx_t_11) {
         } else {
           __pyx_t_10 = __pyx_t_11;
-          goto __pyx_L17_bool_binop_done;
+          goto __pyx_L21_bool_binop_done;
         }
         __pyx_t_11 = (__pyx_v_8neologdn_blocks.count(__pyx_v_c) != 0);
         __pyx_t_10 = __pyx_t_11;
-        __pyx_L17_bool_binop_done:;
+        __pyx_L21_bool_binop_done:;
         if (__pyx_t_10) {
 
           /* "neologdn.pyx":145
@@ -2321,7 +2338,7 @@ static PyObject *__pyx_f_8neologdn_normalize(PyObject *__pyx_v_text, CYTHON_UNUS
  *                         if repeat_count >= repeat:
  *                             continue
  */
-            goto __pyx_L20;
+            goto __pyx_L24;
           }
 
           /* "neologdn.pyx":153
@@ -2334,7 +2351,7 @@ static PyObject *__pyx_f_8neologdn_normalize(PyObject *__pyx_v_text, CYTHON_UNUS
           /*else*/ {
             __pyx_v_repeat_count = 1;
           }
-          __pyx_L20:;
+          __pyx_L24:;
 
           /* "neologdn.pyx":147
  *                     pos -= 1
@@ -2595,7 +2612,7 @@ static struct PyModuleDef __pyx_moduledef = {
 
 static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_kp_u_0, __pyx_k_0, sizeof(__pyx_k_0), 0, 1, 0, 0},
-  {&__pyx_kp_u_0_2, __pyx_k_0_2, sizeof(__pyx_k_0_2), 0, 1, 0, 0},
+  {&__pyx_kp_u_0_2_1, __pyx_k_0_2_1, sizeof(__pyx_k_0_2_1), 0, 1, 0, 0},
   {&__pyx_kp_u_1, __pyx_k_1, sizeof(__pyx_k_1), 0, 1, 0, 0},
   {&__pyx_kp_u_2, __pyx_k_2, sizeof(__pyx_k_2), 0, 1, 0, 0},
   {&__pyx_kp_u_3, __pyx_k_3, sizeof(__pyx_k_3), 0, 1, 0, 0},
@@ -3004,11 +3021,11 @@ static int __Pyx_InitCachedConstants(void) {
   /* "neologdn.pyx":11
  * from libcpp.unordered_set cimport unordered_set
  * 
- * VERSION = (0, 2)             # <<<<<<<<<<<<<<
- * __version__ = '0.2'
+ * VERSION = (0, 2, 1)             # <<<<<<<<<<<<<<
+ * __version__ = '0.2.1'
  * 
  */
-  __pyx_tuple_ = PyTuple_Pack(2, __pyx_int_0, __pyx_int_2); if (unlikely(!__pyx_tuple_)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 11; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_tuple_ = PyTuple_Pack(3, __pyx_int_0, __pyx_int_2, __pyx_int_1); if (unlikely(!__pyx_tuple_)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 11; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_tuple_);
   __Pyx_GIVEREF(__pyx_tuple_);
 
@@ -4063,6 +4080,7 @@ static int __Pyx_InitCachedConstants(void) {
 static int __Pyx_InitGlobals(void) {
   if (__Pyx_InitStrings(__pyx_string_tab) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;};
   __pyx_int_0 = PyInt_FromLong(0); if (unlikely(!__pyx_int_0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_int_1 = PyInt_FromLong(1); if (unlikely(!__pyx_int_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __pyx_int_2 = PyInt_FromLong(2); if (unlikely(!__pyx_int_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __pyx_int_3 = PyInt_FromLong(3); if (unlikely(!__pyx_int_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __pyx_int_128 = PyInt_FromLong(128); if (unlikely(!__pyx_int_128)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
@@ -4223,20 +4241,20 @@ PyMODINIT_FUNC PyInit_neologdn(void)
   /* "neologdn.pyx":11
  * from libcpp.unordered_set cimport unordered_set
  * 
- * VERSION = (0, 2)             # <<<<<<<<<<<<<<
- * __version__ = '0.2'
+ * VERSION = (0, 2, 1)             # <<<<<<<<<<<<<<
+ * __version__ = '0.2.1'
  * 
  */
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_VERSION, __pyx_tuple_) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 11; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
 
   /* "neologdn.pyx":12
  * 
- * VERSION = (0, 2)
- * __version__ = '0.2'             # <<<<<<<<<<<<<<
+ * VERSION = (0, 2, 1)
+ * __version__ = '0.2.1'             # <<<<<<<<<<<<<<
  * 
  * ASCII = (
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_version, __pyx_kp_u_0_2) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 12; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_version, __pyx_kp_u_0_2_1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 12; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
 
   /* "neologdn.pyx":15
  * 

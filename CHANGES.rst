@@ -1,6 +1,11 @@
 CHANGES
 ========
 
+0.2.1 (2017-01-23)
+----------------------------
+
+- Fix bug (Check if a previous character of daku-ten character is in maps) (Many thanks unnonouno)
+
 0.2 (2016-04-12)
 ----------------------------
 
