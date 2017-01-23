@@ -133,10 +133,10 @@ cpdef unicode normalize(unicode text, int repeat=0):
             elif c in TILDES:
                 continue
             else:
-                if c == 'ﾞ':
+                if c == 'ﾞ' and kana_ten_map.count(prev):
                     pos -= 1
                     c = kana_ten_map[prev]
-                elif c == 'ﾟ':
+                elif c == 'ﾟ' and kana_maru_map.count(prev):
                     pos -= 1
                     c = kana_maru_map[prev]
                 elif conversion_map.count(c):
