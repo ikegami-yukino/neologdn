@@ -31,7 +31,7 @@ class TestNeologdn(unittest.TestCase):
         self.assertEqual(normalize(u'a˗֊‐‑‒–⁃⁻₋−'), "a-")
         self.assertEqual(normalize(u'あ﹣－ｰ—―─━ー'), u"あー")
         self.assertEqual(normalize(u'チルダ~∼∾〜〰～'), u"チルダ")
-        self.assertEqual(normalize(u'(ﾟ∀ﾟ )'), u"(゜∀゜)")
+        self.assertEqual(normalize('う゛ほﾟ'), "ゔぽ")
 
     def test_normalize_lengthened(self):
         self.assertEqual(normalize("うまああああああああああああい", repeat=7), "うまあああああああい")
