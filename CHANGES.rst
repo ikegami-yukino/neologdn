@@ -1,10 +1,16 @@
 CHANGES
 ========
 
+0.2.2 (2018-03-10)
+----------------------------
+
+- Fix bug (daku-ten & handaku-ten)
+- Support mac osx 10.13 (Many thanks @r9y9)
+
 0.2.1 (2017-01-23)
 ----------------------------
 
-- Fix bug (Check if a previous character of daku-ten character is in maps) (Many thanks unnonouno)
+- Fix bug (Check if a previous character of daku-ten character is in maps) (Many thanks @unnonouno)
 
 0.2 (2016-04-12)
 ----------------------------
@@ -20,7 +26,7 @@ CHANGES
 ----------------------------
 
 - Support Windows
-- Explicitly specify to -std=c++11 in build (Many thanks id774)
+- Explicitly specify to -std=c++11 in build (Many thanks @id774)
 
 0.1.1 (2015-10-10)
 ----------------------------
