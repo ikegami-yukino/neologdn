@@ -37,6 +37,9 @@ class TestNeologdn(unittest.TestCase):
         self.assertEqual(normalize('うまああああああああああああい', repeat=7), 'うまあああああああい')
         self.assertEqual(normalize('かわいいいいいるい', repeat=6), 'かわいいいいいるい')
 
+    def test_suppress_removal_of_spaces_between_Japanese(self):
+        self.assertEqual(normalize('巴 マミ', remove_space=False), '巴 マミ')
+
 
 if __name__ == '__main__':
     unittest.main()

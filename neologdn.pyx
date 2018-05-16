@@ -8,8 +8,8 @@ from libc.stdlib cimport malloc, free
 from libcpp.unordered_map cimport unordered_map
 from libcpp.unordered_set cimport unordered_set
 
-VERSION = (0, 2, 2)
-__version__ = '0.2.2'
+VERSION = (0, 2, 3)
+__version__ = '0.2.3'
 
 ASCII = (
     ('ａ', 'a'), ('ｂ', 'b'), ('ｃ', 'c'), ('ｄ', 'd'), ('ｅ', 'e'),
@@ -102,7 +102,7 @@ for c in map(chr_func, range(128)):
 del ASCII, KANA, DIGIT, KANA_TEN, KANA_MARU, char_codes, version_info, chr_func
 
 
-cpdef unicode normalize(unicode text, int repeat=0):
+cpdef unicode normalize(unicode text, int repeat=0, bint remove_space=True):
     cdef Py_UNICODE *buf = <Py_UNICODE *>malloc(sizeof(Py_UNICODE) * (len(text) + 1))
 
     cdef Py_UNICODE c, prev = '\0'
@@ -113,13 +113,15 @@ cpdef unicode normalize(unicode text, int repeat=0):
     for c in text:
         if c in SPACE:
             c = ' '
-            if prev == ' ' or blocks.count(prev):
+            if (prev == ' ' or blocks.count(prev)) and remove_space:
                 continue
             elif prev != '*' and pos > 0 and basic_latin.count(prev):
                 lattin_space = True
                 buf[pos] = c
-            else:
+            elif remove_space:
                 pos -= 1
+            else:
+                buf[pos] = c
         else:
             if c in HIPHENS:
                 if prev == '-':
@@ -142,7 +144,7 @@ cpdef unicode normalize(unicode text, int repeat=0):
                 elif c == 'ﾟ' and kana_maru_map.count(prev):
                     pos -= 1
                     c = kana_maru_map[prev]
-                if lattin_space and blocks.count(c):
+                if lattin_space and blocks.count(c) and remove_space:
                     pos -= 1
                 lattin_space = False
                 if repeat:
