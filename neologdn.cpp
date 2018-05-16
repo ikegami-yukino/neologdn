@@ -1465,7 +1465,7 @@ static const char __pyx_k__508[] = "\343\200\200";
 static const char __pyx_k_main[] = "__main__";
 static const char __pyx_k_test[] = "__test__";
 static const char __pyx_k_text[] = "text";
-static const char __pyx_k_0_2_3[] = "0.2.3";
+static const char __pyx_k_0_3_2[] = "0.3.2";
 static const char __pyx_k_ASCII[] = "ASCII";
 static const char __pyx_k_DIGIT[] = "DIGIT";
 static const char __pyx_k_SPACE[] = "SPACE";
@@ -1491,7 +1491,7 @@ static const char __pyx_k_remove_space[] = "remove_space";
 static const char __pyx_k_version_info[] = "version_info";
 static const char __pyx_k_cline_in_traceback[] = "cline_in_traceback";
 static PyObject *__pyx_kp_u_0;
-static PyObject *__pyx_kp_u_0_2_3;
+static PyObject *__pyx_kp_u_0_3_2;
 static PyObject *__pyx_kp_u_1;
 static PyObject *__pyx_kp_u_2;
 static PyObject *__pyx_kp_u_3;
@@ -3105,7 +3105,7 @@ static struct PyModuleDef __pyx_moduledef = {
 
 static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_kp_u_0, __pyx_k_0, sizeof(__pyx_k_0), 0, 1, 0, 0},
-  {&__pyx_kp_u_0_2_3, __pyx_k_0_2_3, sizeof(__pyx_k_0_2_3), 0, 1, 0, 0},
+  {&__pyx_kp_u_0_3_2, __pyx_k_0_3_2, sizeof(__pyx_k_0_3_2), 0, 1, 0, 0},
   {&__pyx_kp_u_1, __pyx_k_1, sizeof(__pyx_k_1), 0, 1, 0, 0},
   {&__pyx_kp_u_2, __pyx_k_2, sizeof(__pyx_k_2), 0, 1, 0, 0},
   {&__pyx_kp_u_3, __pyx_k_3, sizeof(__pyx_k_3), 0, 1, 0, 0},
@@ -3528,11 +3528,11 @@ static int __Pyx_InitCachedConstants(void) {
   /* "neologdn.pyx":11
  * from libcpp.unordered_set cimport unordered_set
  * 
- * VERSION = (0, 2, 3)             # <<<<<<<<<<<<<<
- * __version__ = '0.2.3'
+ * VERSION = (0, 3, 2)             # <<<<<<<<<<<<<<
+ * __version__ = '0.3.2'
  * 
  */
-  __pyx_tuple_ = PyTuple_Pack(3, __pyx_int_0, __pyx_int_2, __pyx_int_3); if (unlikely(!__pyx_tuple_)) __PYX_ERR(0, 11, __pyx_L1_error)
+  __pyx_tuple_ = PyTuple_Pack(3, __pyx_int_0, __pyx_int_3, __pyx_int_2); if (unlikely(!__pyx_tuple_)) __PYX_ERR(0, 11, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple_);
   __Pyx_GIVEREF(__pyx_tuple_);
 
@@ -4833,20 +4833,20 @@ static int __pyx_pymod_exec_neologdn(PyObject *__pyx_pyinit_module)
   /* "neologdn.pyx":11
  * from libcpp.unordered_set cimport unordered_set
  * 
- * VERSION = (0, 2, 3)             # <<<<<<<<<<<<<<
- * __version__ = '0.2.3'
+ * VERSION = (0, 3, 2)             # <<<<<<<<<<<<<<
+ * __version__ = '0.3.2'
  * 
  */
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_VERSION, __pyx_tuple_) < 0) __PYX_ERR(0, 11, __pyx_L1_error)
 
   /* "neologdn.pyx":12
  * 
- * VERSION = (0, 2, 3)
- * __version__ = '0.2.3'             # <<<<<<<<<<<<<<
+ * VERSION = (0, 3, 2)
+ * __version__ = '0.3.2'             # <<<<<<<<<<<<<<
  * 
  * ASCII = (
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_version, __pyx_kp_u_0_2_3) < 0) __PYX_ERR(0, 12, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_version, __pyx_kp_u_0_3_2) < 0) __PYX_ERR(0, 12, __pyx_L1_error)
 
   /* "neologdn.pyx":15
  * 

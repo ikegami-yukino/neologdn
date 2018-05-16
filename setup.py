@@ -23,7 +23,7 @@ setup(
                            language='c++', extra_compile_args=extra_compile_args)],
     license='Apache Software License',
     keywords=['japanese', 'MeCab'],
-    classifiers=(
+    classifiers=[
         'Development Status :: 3 - Alpha',
         'Intended Audience :: Developers',
         'Natural Language :: Japanese',
@@ -37,10 +37,9 @@ setup(
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
         'Topic :: Text Processing :: Linguistic'
-    ),
+    ],
     description='Japanese text normalizer for mecab-neologd',
-    long_description='%s\n\n%s' % (open('README.md', 'r', encoding='utf8').read(),
-                                   open('CHANGES.md', 'r', encoding='utf8').read()
+    long_description='%s\n\n%s' % (open('README.rst', 'r', encoding='utf8').read(),
+                                   open('CHANGES.rst', 'r', encoding='utf8').read()
                                    ),
-    long_description_content_type="text/markdown"
 )
