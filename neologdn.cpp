@@ -842,20 +842,7 @@ static const char *__pyx_f[] = {
 };
 
 /*--- Type declarations ---*/
-struct __pyx_opt_args_8neologdn_shorten_repeat;
 struct __pyx_opt_args_8neologdn_normalize;
-
-/* "neologdn.pyx":105
- * 
- * 
- * cpdef unicode shorten_repeat(unicode text, int repeat_threshould=0):             # <<<<<<<<<<<<<<
- *     cdef int text_length, i, repeat_length, right_start, right_end, num_repeat_substrs
- *     cdef unicode substr, right_substr
- */
-struct __pyx_opt_args_8neologdn_shorten_repeat {
-  int __pyx_n;
-  int repeat_threshould;
-};
 
 /* "neologdn.pyx":126
  * 
@@ -1038,6 +1025,10 @@ static CYTHON_INLINE int __Pyx_PyBytes_Equals(PyObject* s1, PyObject* s2, int eq
 /* UnicodeEquals.proto */
 static CYTHON_INLINE int __Pyx_PyUnicode_Equals(PyObject* s1, PyObject* s2, int equals);
 
+/* RaiseArgTupleInvalid.proto */
+static void __Pyx_RaiseArgtupleInvalid(const char* func_name, int exact,
+    Py_ssize_t num_min, Py_ssize_t num_max, Py_ssize_t num_found);
+
 /* RaiseDoubleKeywords.proto */
 static void __Pyx_RaiseDoubleKeywordsError(const char* func_name, PyObject* kw_name);
 
@@ -1045,10 +1036,6 @@ static void __Pyx_RaiseDoubleKeywordsError(const char* func_name, PyObject* kw_n
 static int __Pyx_ParseOptionalKeywords(PyObject *kwds, PyObject **argnames[],\
     PyObject *kwds2, PyObject *values[], Py_ssize_t num_pos_args,\
     const char* function_name);
-
-/* RaiseArgTupleInvalid.proto */
-static void __Pyx_RaiseArgtupleInvalid(const char* func_name, int exact,
-    Py_ssize_t num_min, Py_ssize_t num_max, Py_ssize_t num_found);
 
 /* ArgTypeTest.proto */
 #define __Pyx_ArgTypeTest(obj, type, none_allowed, name, exact)\
@@ -1211,7 +1198,7 @@ static std::unordered_map<Py_UNICODE,Py_UNICODE>  __pyx_v_8neologdn_kana_ten_map
 static std::unordered_map<Py_UNICODE,Py_UNICODE>  __pyx_v_8neologdn_kana_maru_map;
 static std::unordered_set<Py_UNICODE>  __pyx_v_8neologdn_blocks;
 static std::unordered_set<Py_UNICODE>  __pyx_v_8neologdn_basic_latin;
-static PyObject *__pyx_f_8neologdn_shorten_repeat(PyObject *, int __pyx_skip_dispatch, struct __pyx_opt_args_8neologdn_shorten_repeat *__pyx_optional_args); /*proto*/
+static PyObject *__pyx_f_8neologdn_shorten_repeat(PyObject *, int, int __pyx_skip_dispatch); /*proto*/
 static PyObject *__pyx_f_8neologdn_normalize(PyObject *, int __pyx_skip_dispatch, struct __pyx_opt_args_8neologdn_normalize *__pyx_optional_args); /*proto*/
 #define __Pyx_MODULE_NAME "neologdn"
 extern int __pyx_module_is_main_neologdn;
@@ -1287,6 +1274,7 @@ static const char __pyx_k__2[] = "\357\275\201";
 static const char __pyx_k__4[] = "\357\275\202";
 static const char __pyx_k__6[] = "\357\275\203";
 static const char __pyx_k__8[] = "\357\275\204";
+static const char __pyx_k_0_4[] = "0.4";
 static const char __pyx_k__10[] = "\357\275\205";
 static const char __pyx_k__12[] = "\357\275\206";
 static const char __pyx_k__14[] = "\357\275\207";
@@ -1602,7 +1590,6 @@ static const char __pyx_k_main[] = "__main__";
 static const char __pyx_k_name[] = "__name__";
 static const char __pyx_k_test[] = "__test__";
 static const char __pyx_k_text[] = "text";
-static const char __pyx_k_0_3_3[] = "0.3.3";
 static const char __pyx_k_ASCII[] = "ASCII";
 static const char __pyx_k_DIGIT[] = "DIGIT";
 static const char __pyx_k_SPACE[] = "SPACE";
@@ -1630,7 +1617,7 @@ static const char __pyx_k_version_info[] = "version_info";
 static const char __pyx_k_repeat_threshould[] = "repeat_threshould";
 static const char __pyx_k_cline_in_traceback[] = "cline_in_traceback";
 static PyObject *__pyx_kp_u_0;
-static PyObject *__pyx_kp_u_0_3_3;
+static PyObject *__pyx_kp_u_0_4;
 static PyObject *__pyx_kp_u_1;
 static PyObject *__pyx_kp_u_2;
 static PyObject *__pyx_kp_u_3;
@@ -2043,6 +2030,7 @@ static PyObject *__pyx_pf_8neologdn_2normalize(CYTHON_UNUSED PyObject *__pyx_sel
 static PyObject *__pyx_int_0;
 static PyObject *__pyx_int_1;
 static PyObject *__pyx_int_3;
+static PyObject *__pyx_int_4;
 static PyObject *__pyx_int_128;
 static PyObject *__pyx_int_12289;
 static PyObject *__pyx_int_12352;
@@ -2262,14 +2250,13 @@ static PyObject *__pyx_tuple__516;
 /* "neologdn.pyx":105
  * 
  * 
- * cpdef unicode shorten_repeat(unicode text, int repeat_threshould=0):             # <<<<<<<<<<<<<<
+ * cpdef unicode shorten_repeat(unicode text, int repeat_threshould):             # <<<<<<<<<<<<<<
  *     cdef int text_length, i, repeat_length, right_start, right_end, num_repeat_substrs
  *     cdef unicode substr, right_substr
  */
 
 static PyObject *__pyx_pw_8neologdn_1shorten_repeat(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyObject *__pyx_f_8neologdn_shorten_repeat(PyObject *__pyx_v_text, CYTHON_UNUSED int __pyx_skip_dispatch, struct __pyx_opt_args_8neologdn_shorten_repeat *__pyx_optional_args) {
-  int __pyx_v_repeat_threshould = ((int)0);
+static PyObject *__pyx_f_8neologdn_shorten_repeat(PyObject *__pyx_v_text, int __pyx_v_repeat_threshould, CYTHON_UNUSED int __pyx_skip_dispatch) {
   int __pyx_v_text_length;
   int __pyx_v_i;
   int __pyx_v_repeat_length;
@@ -2295,11 +2282,6 @@ static PyObject *__pyx_f_8neologdn_shorten_repeat(PyObject *__pyx_v_text, CYTHON
   int __pyx_t_13;
   int __pyx_t_14;
   __Pyx_RefNannySetupContext("shorten_repeat", 0);
-  if (__pyx_optional_args) {
-    if (__pyx_optional_args->__pyx_n > 0) {
-      __pyx_v_repeat_threshould = __pyx_optional_args->repeat_threshould;
-    }
-  }
   __Pyx_INCREF(__pyx_v_text);
 
   /* "neologdn.pyx":109
@@ -2683,7 +2665,7 @@ static PyObject *__pyx_f_8neologdn_shorten_repeat(PyObject *__pyx_v_text, CYTHON
   /* "neologdn.pyx":105
  * 
  * 
- * cpdef unicode shorten_repeat(unicode text, int repeat_threshould=0):             # <<<<<<<<<<<<<<
+ * cpdef unicode shorten_repeat(unicode text, int repeat_threshould):             # <<<<<<<<<<<<<<
  *     cdef int text_length, i, repeat_length, right_start, right_end, num_repeat_substrs
  *     cdef unicode substr, right_substr
  */
@@ -2736,33 +2718,26 @@ static PyObject *__pyx_pw_8neologdn_1shorten_repeat(PyObject *__pyx_self, PyObje
         else goto __pyx_L5_argtuple_error;
         CYTHON_FALLTHROUGH;
         case  1:
-        if (kw_args > 0) {
-          PyObject* value = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_repeat_threshould);
-          if (value) { values[1] = value; kw_args--; }
+        if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_repeat_threshould)) != 0)) kw_args--;
+        else {
+          __Pyx_RaiseArgtupleInvalid("shorten_repeat", 1, 2, 2, 1); __PYX_ERR(0, 105, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
         if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "shorten_repeat") < 0)) __PYX_ERR(0, 105, __pyx_L3_error)
       }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
+      goto __pyx_L5_argtuple_error;
     } else {
-      switch (PyTuple_GET_SIZE(__pyx_args)) {
-        case  2: values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
-        CYTHON_FALLTHROUGH;
-        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
-        break;
-        default: goto __pyx_L5_argtuple_error;
-      }
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+      values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
     __pyx_v_text = ((PyObject*)values[0]);
-    if (values[1]) {
-      __pyx_v_repeat_threshould = __Pyx_PyInt_As_int(values[1]); if (unlikely((__pyx_v_repeat_threshould == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 105, __pyx_L3_error)
-    } else {
-      __pyx_v_repeat_threshould = ((int)0);
-    }
+    __pyx_v_repeat_threshould = __Pyx_PyInt_As_int(values[1]); if (unlikely((__pyx_v_repeat_threshould == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 105, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("shorten_repeat", 0, 1, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 105, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("shorten_repeat", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 105, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("neologdn.shorten_repeat", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -2784,12 +2759,9 @@ static PyObject *__pyx_pf_8neologdn_shorten_repeat(CYTHON_UNUSED PyObject *__pyx
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
-  struct __pyx_opt_args_8neologdn_shorten_repeat __pyx_t_2;
   __Pyx_RefNannySetupContext("shorten_repeat", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_2.__pyx_n = 1;
-  __pyx_t_2.repeat_threshould = __pyx_v_repeat_threshould;
-  __pyx_t_1 = __pyx_f_8neologdn_shorten_repeat(__pyx_v_text, 0, &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 105, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_8neologdn_shorten_repeat(__pyx_v_text, __pyx_v_repeat_threshould, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 105, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -2837,7 +2809,6 @@ static PyObject *__pyx_f_8neologdn_normalize(PyObject *__pyx_v_text, CYTHON_UNUS
   PyObject *__pyx_t_9 = NULL;
   int __pyx_t_10;
   int __pyx_t_11;
-  struct __pyx_opt_args_8neologdn_shorten_repeat __pyx_t_12;
   __Pyx_RefNannySetupContext("normalize", 0);
   if (__pyx_optional_args) {
     if (__pyx_optional_args->__pyx_n > 0) {
@@ -3530,9 +3501,7 @@ static PyObject *__pyx_f_8neologdn_normalize(PyObject *__pyx_v_text, CYTHON_UNUS
  *     return ret
  */
     __Pyx_XDECREF(__pyx_r);
-    __pyx_t_12.__pyx_n = 1;
-    __pyx_t_12.repeat_threshould = __pyx_v_repeat;
-    __pyx_t_8 = __pyx_f_8neologdn_shorten_repeat(__pyx_v_ret, 0, &__pyx_t_12); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 182, __pyx_L1_error)
+    __pyx_t_8 = __pyx_f_8neologdn_shorten_repeat(__pyx_v_ret, __pyx_v_repeat, 0); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 182, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
     __pyx_r = ((PyObject*)__pyx_t_8);
     __pyx_t_8 = 0;
@@ -3744,7 +3713,7 @@ static struct PyModuleDef __pyx_moduledef = {
 
 static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_kp_u_0, __pyx_k_0, sizeof(__pyx_k_0), 0, 1, 0, 0},
-  {&__pyx_kp_u_0_3_3, __pyx_k_0_3_3, sizeof(__pyx_k_0_3_3), 0, 1, 0, 0},
+  {&__pyx_kp_u_0_4, __pyx_k_0_4, sizeof(__pyx_k_0_4), 0, 1, 0, 0},
   {&__pyx_kp_u_1, __pyx_k_1, sizeof(__pyx_k_1), 0, 1, 0, 0},
   {&__pyx_kp_u_2, __pyx_k_2, sizeof(__pyx_k_2), 0, 1, 0, 0},
   {&__pyx_kp_u_3, __pyx_k_3, sizeof(__pyx_k_3), 0, 1, 0, 0},
@@ -4170,11 +4139,11 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   /* "neologdn.pyx":11
  * from libcpp.unordered_set cimport unordered_set
  * 
- * VERSION = (0, 3, 3)             # <<<<<<<<<<<<<<
- * __version__ = '0.3.3'
+ * VERSION = (0, 4)             # <<<<<<<<<<<<<<
+ * __version__ = '0.4'
  * 
  */
-  __pyx_tuple_ = PyTuple_Pack(3, __pyx_int_0, __pyx_int_3, __pyx_int_3); if (unlikely(!__pyx_tuple_)) __PYX_ERR(0, 11, __pyx_L1_error)
+  __pyx_tuple_ = PyTuple_Pack(2, __pyx_int_0, __pyx_int_4); if (unlikely(!__pyx_tuple_)) __PYX_ERR(0, 11, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple_);
   __Pyx_GIVEREF(__pyx_tuple_);
 
@@ -5265,6 +5234,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitGlobals(void) {
   __pyx_int_0 = PyInt_FromLong(0); if (unlikely(!__pyx_int_0)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_int_1 = PyInt_FromLong(1); if (unlikely(!__pyx_int_1)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_int_3 = PyInt_FromLong(3); if (unlikely(!__pyx_int_3)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_int_4 = PyInt_FromLong(4); if (unlikely(!__pyx_int_4)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_int_128 = PyInt_FromLong(128); if (unlikely(!__pyx_int_128)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_int_12289 = PyInt_FromLong(12289L); if (unlikely(!__pyx_int_12289)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_int_12352 = PyInt_FromLong(12352L); if (unlikely(!__pyx_int_12352)) __PYX_ERR(0, 1, __pyx_L1_error)
@@ -5589,20 +5559,20 @@ if (!__Pyx_RefNanny) {
   /* "neologdn.pyx":11
  * from libcpp.unordered_set cimport unordered_set
  * 
- * VERSION = (0, 3, 3)             # <<<<<<<<<<<<<<
- * __version__ = '0.3.3'
+ * VERSION = (0, 4)             # <<<<<<<<<<<<<<
+ * __version__ = '0.4'
  * 
  */
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_VERSION, __pyx_tuple_) < 0) __PYX_ERR(0, 11, __pyx_L1_error)
 
   /* "neologdn.pyx":12
  * 
- * VERSION = (0, 3, 3)
- * __version__ = '0.3.3'             # <<<<<<<<<<<<<<
+ * VERSION = (0, 4)
+ * __version__ = '0.4'             # <<<<<<<<<<<<<<
  * 
  * ASCII = (
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_version, __pyx_kp_u_0_3_3) < 0) __PYX_ERR(0, 12, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_version, __pyx_kp_u_0_4) < 0) __PYX_ERR(0, 12, __pyx_L1_error)
 
   /* "neologdn.pyx":15
  * 
@@ -7005,6 +6975,32 @@ return_ne:
 #endif
 }
 
+/* RaiseArgTupleInvalid */
+static void __Pyx_RaiseArgtupleInvalid(
+    const char* func_name,
+    int exact,
+    Py_ssize_t num_min,
+    Py_ssize_t num_max,
+    Py_ssize_t num_found)
+{
+    Py_ssize_t num_expected;
+    const char *more_or_less;
+    if (num_found < num_min) {
+        num_expected = num_min;
+        more_or_less = "at least";
+    } else {
+        num_expected = num_max;
+        more_or_less = "at most";
+    }
+    if (exact) {
+        more_or_less = "exactly";
+    }
+    PyErr_Format(PyExc_TypeError,
+                 "%.200s() takes %.8s %" CYTHON_FORMAT_SSIZE_T "d positional argument%.1s (%" CYTHON_FORMAT_SSIZE_T "d given)",
+                 func_name, more_or_less, num_expected,
+                 (num_expected == 1) ? "" : "s", num_found);
+}
+
 /* RaiseDoubleKeywords */
 static void __Pyx_RaiseDoubleKeywordsError(
     const char* func_name,
@@ -7119,32 +7115,6 @@ invalid_keyword:
     #endif
 bad:
     return -1;
-}
-
-/* RaiseArgTupleInvalid */
-static void __Pyx_RaiseArgtupleInvalid(
-    const char* func_name,
-    int exact,
-    Py_ssize_t num_min,
-    Py_ssize_t num_max,
-    Py_ssize_t num_found)
-{
-    Py_ssize_t num_expected;
-    const char *more_or_less;
-    if (num_found < num_min) {
-        num_expected = num_min;
-        more_or_less = "at least";
-    } else {
-        num_expected = num_max;
-        more_or_less = "at most";
-    }
-    if (exact) {
-        more_or_less = "exactly";
-    }
-    PyErr_Format(PyExc_TypeError,
-                 "%.200s() takes %.8s %" CYTHON_FORMAT_SSIZE_T "d positional argument%.1s (%" CYTHON_FORMAT_SSIZE_T "d given)",
-                 func_name, more_or_less, num_expected,
-                 (num_expected == 1) ? "" : "s", num_found);
 }
 
 /* ArgTypeTest */

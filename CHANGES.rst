@@ -1,6 +1,11 @@
 CHANGES
 ========
 
+0.4 (2018-12-06)
+----------------------------
+
+- Add shorten_repeat function, which shortening contiguous substring. For example: neologdn.normalize("無駄無駄無駄無駄ァ", repeat=1) -> 無駄ァ
+
 0.3.2 (2018-05-17)
 ----------------------------
 
