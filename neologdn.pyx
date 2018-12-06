@@ -102,13 +102,33 @@ for c in map(chr_func, range(128)):
 del ASCII, KANA, DIGIT, KANA_TEN, KANA_MARU, char_codes, version_info, chr_func
 
 
+cpdef unicode shorten_repeat(unicode text, int repeat_threshould):
+    cdef int text_length, i, repeat_length, right_start, right_end, num_repeat_substrs
+    cdef unicode substr, right_substr
+
+    text_length = len(text)
+    for (i, repeat_length) in itertools.product(range(text_length), range(1, text_length//2)):
+        substr = text[i:i+repeat_length]
+        right_start = i + repeat_length
+        right_end = right_start + repeat_length
+        right_substr = text[right_start:right_end]
+        num_repeat_substrs = 1
+        while substr == right_substr and right_end <= text_length:
+            num_repeat_substrs += 1
+            right_start += repeat_length
+            right_end += repeat_length
+            right_substr = text[right_start:right_end]
+        if num_repeat_substrs > repeat_threshould:
+            text = text.replace(substr*num_repeat_substrs, substr*repeat_threshould)
+    return text
+
+
 cpdef unicode normalize(unicode text, int repeat=0, bint remove_space=True):
     cdef Py_UNICODE *buf = <Py_UNICODE *>malloc(sizeof(Py_UNICODE) * (len(text) + 1))
 
     cdef Py_UNICODE c, prev = '\0'
     cdef int pos = 0
     cdef bint lattin_space = False
-    cdef int repeat_count = 1
 
     for c in text:
         if c in SPACE:
@@ -147,13 +167,6 @@ cpdef unicode normalize(unicode text, int repeat=0, bint remove_space=True):
                 if lattin_space and blocks.count(c) and remove_space:
                     pos -= 1
                 lattin_space = False
-                if repeat:
-                    if c == prev:
-                        if repeat_count >= repeat:
-                            continue
-                        repeat_count += 1
-                    else:
-                        repeat_count = 1
                 buf[pos] = c
         prev = c
         pos += 1
@@ -164,4 +177,7 @@ cpdef unicode normalize(unicode text, int repeat=0, bint remove_space=True):
 
     cdef unicode ret = buf
     free(buf)
+
+    if repeat:
+        return shorten_repeat(ret, repeat)
     return ret
