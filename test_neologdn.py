@@ -1,7 +1,7 @@
 # encoding: utf8
 from __future__ import unicode_literals
 import unittest
-from neologdn import normalize
+from neologdn import normalize, shorten_repeat
 
 
 class TestNeologdn(unittest.TestCase):
@@ -33,9 +33,11 @@ class TestNeologdn(unittest.TestCase):
         self.assertEqual(normalize('チルダ~∼∾〜〰～'), 'チルダ')
         self.assertEqual(normalize('う゛ほﾟ'), 'ゔぽ')
 
-    def test_normalize_lengthened(self):
-        self.assertEqual(normalize('うまああああああああああああい', repeat=7), 'うまあああああああい')
-        self.assertEqual(normalize('かわいいいいいるい', repeat=6), 'かわいいいいいるい')
+    def test_shorten_repeat(self):
+        self.assertEqual(shorten_repeat('うまああああああああああああい', 7), 'うまあああああああい')
+        self.assertEqual(shorten_repeat('かわいいいいいるい', 6), 'かわいいいいいるい')
+        self.assertEqual(shorten_repeat('オラオラオラオラーッ', 2), 'オラオラーッ')
+        self.assertEqual(shorten_repeat('無駄無駄無駄無駄ァ', 1), '無駄ァ')
 
     def test_suppress_removal_of_spaces_between_Japanese(self):
         self.assertEqual(normalize('巴 マミ', remove_space=False), '巴 マミ')

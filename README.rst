@@ -44,6 +44,8 @@ Usage
     # => 'Natural Language Processing'
     neologdn.normalize("かわいいいいいいいいい", repeat=6)
     # => 'かわいいいいいい'
+    neologdn.normalize("無駄無駄無駄無駄ァ", repeat=1)
+    # => '無駄ァ'
 
 
 Benchmark
