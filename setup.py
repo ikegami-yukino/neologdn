@@ -9,7 +9,7 @@ with open('neologdn.cpp', 'r', encoding='utf8') as f:
         r".*__version__ = '(.*?)'", re.S).match(f.read()).group(1)
 
 extra_compile_args = ["-std=c++11"]
-if platform.system() == "Darwin" and platform.mac_ver()[0] < '10.13':
+if platform.system() == "Darwin":
     extra_compile_args.append("-mmacosx-version-min=10.7")
     extra_compile_args.append("-stdlib=libc++")
 
