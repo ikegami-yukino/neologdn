@@ -102,28 +102,36 @@ for c in map(chr_func, range(128)):
 del ASCII, KANA, DIGIT, KANA_TEN, KANA_MARU, char_codes, version_info, chr_func
 
 
-cpdef unicode shorten_repeat(unicode text, int repeat_threshould):
-    cdef int text_length, i, repeat_length, right_start, right_end, num_repeat_substrs
+cpdef unicode shorten_repeat(unicode text, int repeat_threshould, int max_repeat_substr_length):
+    cdef int text_length, i, repeat_length, right_start, right_end, num_repeat_substrs, upper_repeat_substr_length
     cdef unicode substr, right_substr
 
-    text_length = len(text)
-    for (i, repeat_length) in itertools.product(range(text_length), range(1, text_length//2)):
-        substr = text[i:i+repeat_length]
-        right_start = i + repeat_length
-        right_end = right_start + repeat_length
-        right_substr = text[right_start:right_end]
-        num_repeat_substrs = 1
-        while substr == right_substr and right_end <= text_length:
-            num_repeat_substrs += 1
-            right_start += repeat_length
-            right_end += repeat_length
+    i = 0
+    while i < len(text):
+        text_length = len(text)
+
+        upper_repeat_substr_length = (text_length - i) // 2
+        if max_repeat_substr_length and max_repeat_substr_length < upper_repeat_substr_length:
+            upper_repeat_substr_length = max_repeat_substr_length + 1
+
+        for repeat_length in range(1, upper_repeat_substr_length):
+            substr = text[i:i+repeat_length]
+            right_start = i + repeat_length
+            right_end = right_start + repeat_length
             right_substr = text[right_start:right_end]
-        if num_repeat_substrs > repeat_threshould:
-            text = text.replace(substr*num_repeat_substrs, substr*repeat_threshould)
+            num_repeat_substrs = 1
+            while substr == right_substr and right_end <= text_length:
+                num_repeat_substrs += 1
+                right_start += repeat_length
+                right_end += repeat_length
+                right_substr = text[right_start:right_end]
+            if num_repeat_substrs > repeat_threshould:
+                text = text[:i+repeat_length*repeat_threshould] + text[i+repeat_length*num_repeat_substrs:]
+        i += 1
     return text
 
 
-cpdef unicode normalize(unicode text, int repeat=0, bint remove_space=True):
+cpdef unicode normalize(unicode text, int repeat=0, bint remove_space=True, int max_repeat_substr_length=0):
     cdef Py_UNICODE *buf = <Py_UNICODE *>malloc(sizeof(Py_UNICODE) * (len(text) + 1))
 
     cdef Py_UNICODE c, prev = '\0'
@@ -179,5 +187,5 @@ cpdef unicode normalize(unicode text, int repeat=0, bint remove_space=True):
     free(buf)
 
     if repeat:
-        return shorten_repeat(ret, repeat)
+        return shorten_repeat(ret, repeat, max_repeat_substr_length)
     return ret

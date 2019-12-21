@@ -34,10 +34,14 @@ class TestNeologdn(unittest.TestCase):
         self.assertEqual(normalize('う゛ほﾟ'), 'ゔぽ')
 
     def test_shorten_repeat(self):
-        self.assertEqual(shorten_repeat('うまああああああああああああい', 7), 'うまあああああああい')
-        self.assertEqual(shorten_repeat('かわいいいいいるい', 6), 'かわいいいいいるい')
-        self.assertEqual(shorten_repeat('オラオラオラオラーッ', 2), 'オラオラーッ')
-        self.assertEqual(shorten_repeat('無駄無駄無駄無駄ァ', 1), '無駄ァ')
+        self.assertEqual(shorten_repeat('うまああああああああああああい', 7, 0), 'うまあああああああい')
+        self.assertEqual(shorten_repeat('かわいいいいいるい', 6, 0), 'かわいいいいいるい')
+        self.assertEqual(shorten_repeat('オラオラオラオラーッ', 2, 0), 'オラオラーッ')
+        self.assertEqual(shorten_repeat('無駄無駄無駄無駄ァ', 1, 0), '無駄ァ')
+        self.assertEqual(shorten_repeat('隣の客はよく柿食う客だ、隣の客はよく柿食う客だ、隣の客はよく柿食う客だ、言えた！', 1, 0),
+                         '隣の客はよく柿食う客だ、言えた！')
+        self.assertEqual(shorten_repeat('隣の客はよく柿食う客だ、隣の客はよく柿食う客だ、隣の客はよく柿食う客だ、言えた！', 1, 11),
+                         '隣の客はよく柿食う客だ、隣の客はよく柿食う客だ、隣の客はよく柿食う客だ、言えた！')
 
     def test_suppress_removal_of_spaces_between_Japanese(self):
         self.assertEqual(normalize('巴 マミ', remove_space=False), '巴 マミ')
