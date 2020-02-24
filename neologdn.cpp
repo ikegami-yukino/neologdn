@@ -834,7 +834,7 @@ struct __pyx_opt_args_8neologdn_normalize;
 /* "neologdn.pyx":105
  * 
  * 
- * cpdef unicode shorten_repeat(unicode text, int repeat_threshould, int max_repeat_substr_length=0):             # <<<<<<<<<<<<<<
+ * cpdef unicode shorten_repeat(unicode text, int repeat_threshould, int max_repeat_substr_length=8):             # <<<<<<<<<<<<<<
  *     cdef int text_length, i, repeat_length, right_start, right_end, num_repeat_substrs, upper_repeat_substr_length
  *     cdef unicode substr, right_substr
  */
@@ -846,7 +846,7 @@ struct __pyx_opt_args_8neologdn_shorten_repeat {
 /* "neologdn.pyx":134
  * 
  * 
- * cpdef unicode normalize(unicode text, int repeat=0, bint remove_space=True, int max_repeat_substr_length=0):             # <<<<<<<<<<<<<<
+ * cpdef unicode normalize(unicode text, int repeat=0, bint remove_space=True, int max_repeat_substr_length=8):             # <<<<<<<<<<<<<<
  *     cdef Py_UNICODE *buf = <Py_UNICODE *>malloc(sizeof(Py_UNICODE) * (len(text) + 1))
  * 
  */
@@ -2237,14 +2237,14 @@ static PyObject *__pyx_tuple__516;
 /* "neologdn.pyx":105
  * 
  * 
- * cpdef unicode shorten_repeat(unicode text, int repeat_threshould, int max_repeat_substr_length=0):             # <<<<<<<<<<<<<<
+ * cpdef unicode shorten_repeat(unicode text, int repeat_threshould, int max_repeat_substr_length=8):             # <<<<<<<<<<<<<<
  *     cdef int text_length, i, repeat_length, right_start, right_end, num_repeat_substrs, upper_repeat_substr_length
  *     cdef unicode substr, right_substr
  */
 
 static PyObject *__pyx_pw_8neologdn_1shorten_repeat(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
 static PyObject *__pyx_f_8neologdn_shorten_repeat(PyObject *__pyx_v_text, int __pyx_v_repeat_threshould, CYTHON_UNUSED int __pyx_skip_dispatch, struct __pyx_opt_args_8neologdn_shorten_repeat *__pyx_optional_args) {
-  int __pyx_v_max_repeat_substr_length = ((int)0);
+  int __pyx_v_max_repeat_substr_length = ((int)8);
   int __pyx_v_text_length;
   int __pyx_v_i;
   int __pyx_v_repeat_length;
@@ -2564,7 +2564,7 @@ static PyObject *__pyx_f_8neologdn_shorten_repeat(PyObject *__pyx_v_text, int __
   /* "neologdn.pyx":105
  * 
  * 
- * cpdef unicode shorten_repeat(unicode text, int repeat_threshould, int max_repeat_substr_length=0):             # <<<<<<<<<<<<<<
+ * cpdef unicode shorten_repeat(unicode text, int repeat_threshould, int max_repeat_substr_length=8):             # <<<<<<<<<<<<<<
  *     cdef int text_length, i, repeat_length, right_start, right_end, num_repeat_substrs, upper_repeat_substr_length
  *     cdef unicode substr, right_substr
  */
@@ -2646,7 +2646,7 @@ static PyObject *__pyx_pw_8neologdn_1shorten_repeat(PyObject *__pyx_self, PyObje
     if (values[2]) {
       __pyx_v_max_repeat_substr_length = __Pyx_PyInt_As_int(values[2]); if (unlikely((__pyx_v_max_repeat_substr_length == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 105, __pyx_L3_error)
     } else {
-      __pyx_v_max_repeat_substr_length = ((int)0);
+      __pyx_v_max_repeat_substr_length = ((int)8);
     }
   }
   goto __pyx_L4_argument_unpacking_done;
@@ -2698,7 +2698,7 @@ static PyObject *__pyx_pf_8neologdn_shorten_repeat(CYTHON_UNUSED PyObject *__pyx
 /* "neologdn.pyx":134
  * 
  * 
- * cpdef unicode normalize(unicode text, int repeat=0, bint remove_space=True, int max_repeat_substr_length=0):             # <<<<<<<<<<<<<<
+ * cpdef unicode normalize(unicode text, int repeat=0, bint remove_space=True, int max_repeat_substr_length=8):             # <<<<<<<<<<<<<<
  *     cdef Py_UNICODE *buf = <Py_UNICODE *>malloc(sizeof(Py_UNICODE) * (len(text) + 1))
  * 
  */
@@ -2707,7 +2707,7 @@ static PyObject *__pyx_pw_8neologdn_3normalize(PyObject *__pyx_self, PyObject *_
 static PyObject *__pyx_f_8neologdn_normalize(PyObject *__pyx_v_text, CYTHON_UNUSED int __pyx_skip_dispatch, struct __pyx_opt_args_8neologdn_normalize *__pyx_optional_args) {
   int __pyx_v_repeat = ((int)0);
   int __pyx_v_remove_space = ((int)1);
-  int __pyx_v_max_repeat_substr_length = ((int)0);
+  int __pyx_v_max_repeat_substr_length = ((int)8);
   Py_UNICODE *__pyx_v_buf;
   Py_UNICODE __pyx_v_c;
   Py_UNICODE __pyx_v_prev;
@@ -2743,7 +2743,7 @@ static PyObject *__pyx_f_8neologdn_normalize(PyObject *__pyx_v_text, CYTHON_UNUS
 
   /* "neologdn.pyx":135
  * 
- * cpdef unicode normalize(unicode text, int repeat=0, bint remove_space=True, int max_repeat_substr_length=0):
+ * cpdef unicode normalize(unicode text, int repeat=0, bint remove_space=True, int max_repeat_substr_length=8):
  *     cdef Py_UNICODE *buf = <Py_UNICODE *>malloc(sizeof(Py_UNICODE) * (len(text) + 1))             # <<<<<<<<<<<<<<
  * 
  *     cdef Py_UNICODE c, prev = '\0'
@@ -3453,7 +3453,7 @@ static PyObject *__pyx_f_8neologdn_normalize(PyObject *__pyx_v_text, CYTHON_UNUS
   /* "neologdn.pyx":134
  * 
  * 
- * cpdef unicode normalize(unicode text, int repeat=0, bint remove_space=True, int max_repeat_substr_length=0):             # <<<<<<<<<<<<<<
+ * cpdef unicode normalize(unicode text, int repeat=0, bint remove_space=True, int max_repeat_substr_length=8):             # <<<<<<<<<<<<<<
  *     cdef Py_UNICODE *buf = <Py_UNICODE *>malloc(sizeof(Py_UNICODE) * (len(text) + 1))
  * 
  */
@@ -3554,7 +3554,7 @@ static PyObject *__pyx_pw_8neologdn_3normalize(PyObject *__pyx_self, PyObject *_
     if (values[3]) {
       __pyx_v_max_repeat_substr_length = __Pyx_PyInt_As_int(values[3]); if (unlikely((__pyx_v_max_repeat_substr_length == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 134, __pyx_L3_error)
     } else {
-      __pyx_v_max_repeat_substr_length = ((int)0);
+      __pyx_v_max_repeat_substr_length = ((int)8);
     }
   }
   goto __pyx_L4_argument_unpacking_done;

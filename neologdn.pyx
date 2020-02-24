@@ -102,7 +102,7 @@ for c in map(chr_func, range(128)):
 del ASCII, KANA, DIGIT, KANA_TEN, KANA_MARU, char_codes, version_info, chr_func
 
 
-cpdef unicode shorten_repeat(unicode text, int repeat_threshould, int max_repeat_substr_length=0):
+cpdef unicode shorten_repeat(unicode text, int repeat_threshould, int max_repeat_substr_length=8):
     cdef int text_length, i, repeat_length, right_start, right_end, num_repeat_substrs, upper_repeat_substr_length
     cdef unicode substr, right_substr
 
@@ -131,7 +131,7 @@ cpdef unicode shorten_repeat(unicode text, int repeat_threshould, int max_repeat
     return text
 
 
-cpdef unicode normalize(unicode text, int repeat=0, bint remove_space=True, int max_repeat_substr_length=0):
+cpdef unicode normalize(unicode text, int repeat=0, bint remove_space=True, int max_repeat_substr_length=8):
     cdef Py_UNICODE *buf = <Py_UNICODE *>malloc(sizeof(Py_UNICODE) * (len(text) + 1))
 
     cdef Py_UNICODE c, prev = '\0'
