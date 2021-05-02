@@ -9,8 +9,8 @@ from libc.stdlib cimport malloc, free
 from libcpp.unordered_map cimport unordered_map
 from libcpp.unordered_set cimport unordered_set
 
-VERSION = (0, 5)
-__version__ = '0.5'
+VERSION = (0, 5, 1)
+__version__ = '0.5.1'
 
 ASCII = (
     ('ａ', 'a'), ('ｂ', 'b'), ('ｃ', 'c'), ('ｄ', 'd'), ('ｅ', 'e'),
@@ -130,7 +130,7 @@ cpdef unicode shorten_repeat(unicode text, int repeat_threshould, int max_repeat
 
 
 cpdef unicode normalize(unicode text, int repeat=0, bint remove_space=True,
-                        int max_repeat_substr_length=8, unicode tilda='remove'):
+                        int max_repeat_substr_length=8, unicode tilde='remove'):
     cdef Py_UNICODE *buf = <Py_UNICODE *>malloc(sizeof(Py_UNICODE) * (len(text) + 1))
 
     cdef Py_UNICODE c, prev = '\0'
@@ -161,11 +161,11 @@ cpdef unicode normalize(unicode text, int repeat=0, bint remove_space=True,
                 else:
                     buf[pos] = c = 'ー'
             elif c in TILDES:
-                if tilda == 'ignore':
+                if tilde == 'ignore':
                     buf[pos] = c
-                elif tilda == 'normalize':
+                elif tilde == 'normalize':
                     buf[pos] = c = '~'
-                elif tilda == 'normalize_zenkaku':
+                elif tilde == 'normalize_zenkaku':
                     buf[pos] = c = '〜'
                 else:
                     continue

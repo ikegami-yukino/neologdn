@@ -46,11 +46,11 @@ class TestNeologdn(unittest.TestCase):
     def test_suppress_removal_of_spaces_between_Japanese(self):
         self.assertEqual(normalize('巴 マミ', remove_space=False), '巴 マミ')
 
-    def test_handling_tilda(self):
-        self.assertEqual(normalize('1467〜1487年', tilda='normalize'), '1467~1487年')
-        self.assertEqual(normalize('1467~1487年', tilda='normalize_zenkaku'), '1467〜1487年')
-        self.assertEqual(normalize('1467〜1487年', tilda='ignore'), '1467〜1487年')
-        self.assertEqual(normalize('1467〜1487年', tilda='remove'), '14671487年')
+    def test_handling_tilde(self):
+        self.assertEqual(normalize('1467〜1487年', tilde='normalize'), '1467~1487年')
+        self.assertEqual(normalize('1467~1487年', tilde='normalize_zenkaku'), '1467〜1487年')
+        self.assertEqual(normalize('1467〜1487年', tilde='ignore'), '1467〜1487年')
+        self.assertEqual(normalize('1467〜1487年', tilde='remove'), '14671487年')
         self.assertEqual(normalize('1467〜1487年'), '14671487年')
 
 

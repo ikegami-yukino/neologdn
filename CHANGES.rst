@@ -1,11 +1,11 @@
 CHANGES
 ========
 
-0.5 (2021-05-02)
+0.5.1 (2021-05-02)
 ----------------------------
 
 - Improve performance of shorten_repeat function (Many thanks @yskn67)
-- Add tilda option to normalize function
+- Add tilde option to normalize function
 
 0.4 (2018-12-06)
 ----------------------------

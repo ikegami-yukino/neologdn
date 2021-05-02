@@ -872,7 +872,7 @@ struct __pyx_opt_args_8neologdn_shorten_repeat {
  * 
  * 
  * cpdef unicode normalize(unicode text, int repeat=0, bint remove_space=True,             # <<<<<<<<<<<<<<
- *                         int max_repeat_substr_length=8, unicode tilda='remove'):
+ *                         int max_repeat_substr_length=8, unicode tilde='remove'):
  *     cdef Py_UNICODE *buf = <Py_UNICODE *>malloc(sizeof(Py_UNICODE) * (len(text) + 1))
  */
 struct __pyx_opt_args_8neologdn_normalize {
@@ -880,7 +880,7 @@ struct __pyx_opt_args_8neologdn_normalize {
   int repeat;
   int remove_space;
   int max_repeat_substr_length;
-  PyObject *tilda;
+  PyObject *tilde;
 };
 
 /* --- Runtime support code (head) --- */
@@ -1276,7 +1276,6 @@ static const char __pyx_k__2[] = "\357\275\201";
 static const char __pyx_k__4[] = "\357\275\202";
 static const char __pyx_k__6[] = "\357\275\203";
 static const char __pyx_k__8[] = "\357\275\204";
-static const char __pyx_k_0_5[] = "0.5";
 static const char __pyx_k__10[] = "\357\275\205";
 static const char __pyx_k__12[] = "\357\275\206";
 static const char __pyx_k__14[] = "\357\275\207";
@@ -1592,13 +1591,14 @@ static const char __pyx_k_main[] = "__main__";
 static const char __pyx_k_name[] = "__name__";
 static const char __pyx_k_test[] = "__test__";
 static const char __pyx_k_text[] = "text";
+static const char __pyx_k_0_5_1[] = "0.5.1";
 static const char __pyx_k_ASCII[] = "ASCII";
 static const char __pyx_k_DIGIT[] = "DIGIT";
 static const char __pyx_k_SPACE[] = "SPACE";
 static const char __pyx_k_after[] = "after";
 static const char __pyx_k_chain[] = "chain";
 static const char __pyx_k_range[] = "range";
-static const char __pyx_k_tilda[] = "tilda";
+static const char __pyx_k_tilde[] = "tilde";
 static const char __pyx_k_TILDES[] = "TILDES";
 static const char __pyx_k_before[] = "before";
 static const char __pyx_k_ignore[] = "ignore";
@@ -1621,7 +1621,7 @@ static const char __pyx_k_repeat_threshould[] = "repeat_threshould";
 static const char __pyx_k_cline_in_traceback[] = "cline_in_traceback";
 static const char __pyx_k_max_repeat_substr_length[] = "max_repeat_substr_length";
 static PyObject *__pyx_kp_u_0;
-static PyObject *__pyx_kp_u_0_5;
+static PyObject *__pyx_kp_u_0_5_1;
 static PyObject *__pyx_kp_u_1;
 static PyObject *__pyx_kp_u_2;
 static PyObject *__pyx_kp_u_3;
@@ -2022,7 +2022,7 @@ static PyObject *__pyx_n_s_sys;
 static PyObject *__pyx_n_u_t;
 static PyObject *__pyx_n_s_test;
 static PyObject *__pyx_n_s_text;
-static PyObject *__pyx_n_s_tilda;
+static PyObject *__pyx_n_s_tilde;
 static PyObject *__pyx_n_u_u;
 static PyObject *__pyx_n_u_v;
 static PyObject *__pyx_n_s_version;
@@ -2032,8 +2032,9 @@ static PyObject *__pyx_n_u_x;
 static PyObject *__pyx_n_u_y;
 static PyObject *__pyx_n_u_z;
 static PyObject *__pyx_pf_8neologdn_shorten_repeat(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_text, int __pyx_v_repeat_threshould, int __pyx_v_max_repeat_substr_length); /* proto */
-static PyObject *__pyx_pf_8neologdn_2normalize(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_text, int __pyx_v_repeat, int __pyx_v_remove_space, int __pyx_v_max_repeat_substr_length, PyObject *__pyx_v_tilda); /* proto */
+static PyObject *__pyx_pf_8neologdn_2normalize(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_text, int __pyx_v_repeat, int __pyx_v_remove_space, int __pyx_v_max_repeat_substr_length, PyObject *__pyx_v_tilde); /* proto */
 static PyObject *__pyx_int_0;
+static PyObject *__pyx_int_1;
 static PyObject *__pyx_int_5;
 static PyObject *__pyx_int_128;
 static PyObject *__pyx_int_12289;
@@ -2724,7 +2725,7 @@ static PyObject *__pyx_pf_8neologdn_shorten_repeat(CYTHON_UNUSED PyObject *__pyx
  * 
  * 
  * cpdef unicode normalize(unicode text, int repeat=0, bint remove_space=True,             # <<<<<<<<<<<<<<
- *                         int max_repeat_substr_length=8, unicode tilda='remove'):
+ *                         int max_repeat_substr_length=8, unicode tilde='remove'):
  *     cdef Py_UNICODE *buf = <Py_UNICODE *>malloc(sizeof(Py_UNICODE) * (len(text) + 1))
  */
 
@@ -2733,7 +2734,7 @@ static PyObject *__pyx_f_8neologdn_normalize(PyObject *__pyx_v_text, CYTHON_UNUS
   int __pyx_v_repeat = ((int)0);
   int __pyx_v_remove_space = ((int)1);
   int __pyx_v_max_repeat_substr_length = ((int)8);
-  PyObject *__pyx_v_tilda = ((PyObject*)__pyx_n_u_remove);
+  PyObject *__pyx_v_tilde = ((PyObject*)__pyx_n_u_remove);
   Py_UNICODE *__pyx_v_buf;
   Py_UNICODE __pyx_v_c;
   Py_UNICODE __pyx_v_prev;
@@ -2766,7 +2767,7 @@ static PyObject *__pyx_f_8neologdn_normalize(PyObject *__pyx_v_text, CYTHON_UNUS
         if (__pyx_optional_args->__pyx_n > 2) {
           __pyx_v_max_repeat_substr_length = __pyx_optional_args->max_repeat_substr_length;
           if (__pyx_optional_args->__pyx_n > 3) {
-            __pyx_v_tilda = __pyx_optional_args->tilda;
+            __pyx_v_tilde = __pyx_optional_args->tilde;
           }
         }
       }
@@ -2775,7 +2776,7 @@ static PyObject *__pyx_f_8neologdn_normalize(PyObject *__pyx_v_text, CYTHON_UNUS
 
   /* "neologdn.pyx":134
  * cpdef unicode normalize(unicode text, int repeat=0, bint remove_space=True,
- *                         int max_repeat_substr_length=8, unicode tilda='remove'):
+ *                         int max_repeat_substr_length=8, unicode tilde='remove'):
  *     cdef Py_UNICODE *buf = <Py_UNICODE *>malloc(sizeof(Py_UNICODE) * (len(text) + 1))             # <<<<<<<<<<<<<<
  * 
  *     cdef Py_UNICODE c, prev = '\0'
@@ -3121,7 +3122,7 @@ static PyObject *__pyx_f_8neologdn_normalize(PyObject *__pyx_v_text, CYTHON_UNUS
  *                 else:
  *                     buf[pos] = c = ''             # <<<<<<<<<<<<<<
  *             elif c in TILDES:
- *                 if tilda == 'ignore':
+ *                 if tilde == 'ignore':
  */
         /*else*/ {
           (__pyx_v_buf[__pyx_v_pos]) = 0x30FC;
@@ -3142,7 +3143,7 @@ static PyObject *__pyx_f_8neologdn_normalize(PyObject *__pyx_v_text, CYTHON_UNUS
  *                 else:
  *                     buf[pos] = c = ''
  *             elif c in TILDES:             # <<<<<<<<<<<<<<
- *                 if tilda == 'ignore':
+ *                 if tilde == 'ignore':
  *                     buf[pos] = c
  */
       __pyx_t_9 = PyUnicode_FromOrdinal(__pyx_v_c); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 163, __pyx_L1_error)
@@ -3158,19 +3159,19 @@ static PyObject *__pyx_f_8neologdn_normalize(PyObject *__pyx_v_text, CYTHON_UNUS
         /* "neologdn.pyx":164
  *                     buf[pos] = c = ''
  *             elif c in TILDES:
- *                 if tilda == 'ignore':             # <<<<<<<<<<<<<<
+ *                 if tilde == 'ignore':             # <<<<<<<<<<<<<<
  *                     buf[pos] = c
- *                 elif tilda == 'normalize':
+ *                 elif tilde == 'normalize':
  */
-        __pyx_t_10 = (__Pyx_PyUnicode_Equals(__pyx_v_tilda, __pyx_n_u_ignore, Py_EQ)); if (unlikely(__pyx_t_10 < 0)) __PYX_ERR(0, 164, __pyx_L1_error)
+        __pyx_t_10 = (__Pyx_PyUnicode_Equals(__pyx_v_tilde, __pyx_n_u_ignore, Py_EQ)); if (unlikely(__pyx_t_10 < 0)) __PYX_ERR(0, 164, __pyx_L1_error)
         __pyx_t_11 = (__pyx_t_10 != 0);
         if (__pyx_t_11) {
 
           /* "neologdn.pyx":165
  *             elif c in TILDES:
- *                 if tilda == 'ignore':
+ *                 if tilde == 'ignore':
  *                     buf[pos] = c             # <<<<<<<<<<<<<<
- *                 elif tilda == 'normalize':
+ *                 elif tilde == 'normalize':
  *                     buf[pos] = c = '~'
  */
           (__pyx_v_buf[__pyx_v_pos]) = __pyx_v_c;
@@ -3178,58 +3179,58 @@ static PyObject *__pyx_f_8neologdn_normalize(PyObject *__pyx_v_text, CYTHON_UNUS
           /* "neologdn.pyx":164
  *                     buf[pos] = c = ''
  *             elif c in TILDES:
- *                 if tilda == 'ignore':             # <<<<<<<<<<<<<<
+ *                 if tilde == 'ignore':             # <<<<<<<<<<<<<<
  *                     buf[pos] = c
- *                 elif tilda == 'normalize':
+ *                 elif tilde == 'normalize':
  */
           goto __pyx_L16;
         }
 
         /* "neologdn.pyx":166
- *                 if tilda == 'ignore':
+ *                 if tilde == 'ignore':
  *                     buf[pos] = c
- *                 elif tilda == 'normalize':             # <<<<<<<<<<<<<<
+ *                 elif tilde == 'normalize':             # <<<<<<<<<<<<<<
  *                     buf[pos] = c = '~'
- *                 elif tilda == 'normalize_zenkaku':
+ *                 elif tilde == 'normalize_zenkaku':
  */
-        __pyx_t_11 = (__Pyx_PyUnicode_Equals(__pyx_v_tilda, __pyx_n_u_normalize, Py_EQ)); if (unlikely(__pyx_t_11 < 0)) __PYX_ERR(0, 166, __pyx_L1_error)
+        __pyx_t_11 = (__Pyx_PyUnicode_Equals(__pyx_v_tilde, __pyx_n_u_normalize, Py_EQ)); if (unlikely(__pyx_t_11 < 0)) __PYX_ERR(0, 166, __pyx_L1_error)
         __pyx_t_10 = (__pyx_t_11 != 0);
         if (__pyx_t_10) {
 
           /* "neologdn.pyx":167
  *                     buf[pos] = c
- *                 elif tilda == 'normalize':
+ *                 elif tilde == 'normalize':
  *                     buf[pos] = c = '~'             # <<<<<<<<<<<<<<
- *                 elif tilda == 'normalize_zenkaku':
+ *                 elif tilde == 'normalize_zenkaku':
  *                     buf[pos] = c = ''
  */
           (__pyx_v_buf[__pyx_v_pos]) = 0x7E;
           __pyx_v_c = 0x7E;
 
           /* "neologdn.pyx":166
- *                 if tilda == 'ignore':
+ *                 if tilde == 'ignore':
  *                     buf[pos] = c
- *                 elif tilda == 'normalize':             # <<<<<<<<<<<<<<
+ *                 elif tilde == 'normalize':             # <<<<<<<<<<<<<<
  *                     buf[pos] = c = '~'
- *                 elif tilda == 'normalize_zenkaku':
+ *                 elif tilde == 'normalize_zenkaku':
  */
           goto __pyx_L16;
         }
 
         /* "neologdn.pyx":168
- *                 elif tilda == 'normalize':
+ *                 elif tilde == 'normalize':
  *                     buf[pos] = c = '~'
- *                 elif tilda == 'normalize_zenkaku':             # <<<<<<<<<<<<<<
+ *                 elif tilde == 'normalize_zenkaku':             # <<<<<<<<<<<<<<
  *                     buf[pos] = c = ''
  *                 else:
  */
-        __pyx_t_10 = (__Pyx_PyUnicode_Equals(__pyx_v_tilda, __pyx_n_u_normalize_zenkaku, Py_EQ)); if (unlikely(__pyx_t_10 < 0)) __PYX_ERR(0, 168, __pyx_L1_error)
+        __pyx_t_10 = (__Pyx_PyUnicode_Equals(__pyx_v_tilde, __pyx_n_u_normalize_zenkaku, Py_EQ)); if (unlikely(__pyx_t_10 < 0)) __PYX_ERR(0, 168, __pyx_L1_error)
         __pyx_t_11 = (__pyx_t_10 != 0);
         if (__pyx_t_11) {
 
           /* "neologdn.pyx":169
  *                     buf[pos] = c = '~'
- *                 elif tilda == 'normalize_zenkaku':
+ *                 elif tilde == 'normalize_zenkaku':
  *                     buf[pos] = c = ''             # <<<<<<<<<<<<<<
  *                 else:
  *                     continue
@@ -3238,9 +3239,9 @@ static PyObject *__pyx_f_8neologdn_normalize(PyObject *__pyx_v_text, CYTHON_UNUS
           __pyx_v_c = 0x301C;
 
           /* "neologdn.pyx":168
- *                 elif tilda == 'normalize':
+ *                 elif tilde == 'normalize':
  *                     buf[pos] = c = '~'
- *                 elif tilda == 'normalize_zenkaku':             # <<<<<<<<<<<<<<
+ *                 elif tilde == 'normalize_zenkaku':             # <<<<<<<<<<<<<<
  *                     buf[pos] = c = ''
  *                 else:
  */
@@ -3263,7 +3264,7 @@ static PyObject *__pyx_f_8neologdn_normalize(PyObject *__pyx_v_text, CYTHON_UNUS
  *                 else:
  *                     buf[pos] = c = ''
  *             elif c in TILDES:             # <<<<<<<<<<<<<<
- *                 if tilda == 'ignore':
+ *                 if tilde == 'ignore':
  *                     buf[pos] = c
  */
         goto __pyx_L13;
@@ -3582,7 +3583,7 @@ static PyObject *__pyx_f_8neologdn_normalize(PyObject *__pyx_v_text, CYTHON_UNUS
  * 
  * 
  * cpdef unicode normalize(unicode text, int repeat=0, bint remove_space=True,             # <<<<<<<<<<<<<<
- *                         int max_repeat_substr_length=8, unicode tilda='remove'):
+ *                         int max_repeat_substr_length=8, unicode tilde='remove'):
  *     cdef Py_UNICODE *buf = <Py_UNICODE *>malloc(sizeof(Py_UNICODE) * (len(text) + 1))
  */
 
@@ -3607,7 +3608,7 @@ static PyObject *__pyx_pw_8neologdn_3normalize(PyObject *__pyx_self, PyObject *_
   int __pyx_v_repeat;
   int __pyx_v_remove_space;
   int __pyx_v_max_repeat_substr_length;
-  PyObject *__pyx_v_tilda = 0;
+  PyObject *__pyx_v_tilde = 0;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
@@ -3615,7 +3616,7 @@ static PyObject *__pyx_pw_8neologdn_3normalize(PyObject *__pyx_self, PyObject *_
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("normalize (wrapper)", 0);
   {
-    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_text,&__pyx_n_s_repeat,&__pyx_n_s_remove_space,&__pyx_n_s_max_repeat_substr_length,&__pyx_n_s_tilda,0};
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_text,&__pyx_n_s_repeat,&__pyx_n_s_remove_space,&__pyx_n_s_max_repeat_substr_length,&__pyx_n_s_tilde,0};
     PyObject* values[5] = {0,0,0,0,0};
     values[4] = ((PyObject*)__pyx_n_u_remove);
     if (unlikely(__pyx_kwds)) {
@@ -3661,7 +3662,7 @@ static PyObject *__pyx_pw_8neologdn_3normalize(PyObject *__pyx_self, PyObject *_
         CYTHON_FALLTHROUGH;
         case  4:
         if (kw_args > 0) {
-          PyObject* value = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_tilda);
+          PyObject* value = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_tilde);
           if (value) { values[4] = value; kw_args--; }
         }
       }
@@ -3699,7 +3700,7 @@ static PyObject *__pyx_pw_8neologdn_3normalize(PyObject *__pyx_self, PyObject *_
     } else {
       __pyx_v_max_repeat_substr_length = ((int)8);
     }
-    __pyx_v_tilda = ((PyObject*)values[4]);
+    __pyx_v_tilde = ((PyObject*)values[4]);
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
@@ -3710,8 +3711,8 @@ static PyObject *__pyx_pw_8neologdn_3normalize(PyObject *__pyx_self, PyObject *_
   return NULL;
   __pyx_L4_argument_unpacking_done:;
   if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_text), (&PyUnicode_Type), 1, "text", 1))) __PYX_ERR(0, 132, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_tilda), (&PyUnicode_Type), 1, "tilda", 1))) __PYX_ERR(0, 133, __pyx_L1_error)
-  __pyx_r = __pyx_pf_8neologdn_2normalize(__pyx_self, __pyx_v_text, __pyx_v_repeat, __pyx_v_remove_space, __pyx_v_max_repeat_substr_length, __pyx_v_tilda);
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_tilde), (&PyUnicode_Type), 1, "tilde", 1))) __PYX_ERR(0, 133, __pyx_L1_error)
+  __pyx_r = __pyx_pf_8neologdn_2normalize(__pyx_self, __pyx_v_text, __pyx_v_repeat, __pyx_v_remove_space, __pyx_v_max_repeat_substr_length, __pyx_v_tilde);
 
   /* function exit code */
   goto __pyx_L0;
@@ -3722,7 +3723,7 @@ static PyObject *__pyx_pw_8neologdn_3normalize(PyObject *__pyx_self, PyObject *_
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_8neologdn_2normalize(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_text, int __pyx_v_repeat, int __pyx_v_remove_space, int __pyx_v_max_repeat_substr_length, PyObject *__pyx_v_tilda) {
+static PyObject *__pyx_pf_8neologdn_2normalize(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_text, int __pyx_v_repeat, int __pyx_v_remove_space, int __pyx_v_max_repeat_substr_length, PyObject *__pyx_v_tilde) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -3736,7 +3737,7 @@ static PyObject *__pyx_pf_8neologdn_2normalize(CYTHON_UNUSED PyObject *__pyx_sel
   __pyx_t_2.repeat = __pyx_v_repeat;
   __pyx_t_2.remove_space = __pyx_v_remove_space;
   __pyx_t_2.max_repeat_substr_length = __pyx_v_max_repeat_substr_length;
-  __pyx_t_2.tilda = __pyx_v_tilda;
+  __pyx_t_2.tilde = __pyx_v_tilde;
   __pyx_t_1 = __pyx_f_8neologdn_normalize(__pyx_v_text, 0, &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 132, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
@@ -3803,7 +3804,7 @@ static struct PyModuleDef __pyx_moduledef = {
 
 static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_kp_u_0, __pyx_k_0, sizeof(__pyx_k_0), 0, 1, 0, 0},
-  {&__pyx_kp_u_0_5, __pyx_k_0_5, sizeof(__pyx_k_0_5), 0, 1, 0, 0},
+  {&__pyx_kp_u_0_5_1, __pyx_k_0_5_1, sizeof(__pyx_k_0_5_1), 0, 1, 0, 0},
   {&__pyx_kp_u_1, __pyx_k_1, sizeof(__pyx_k_1), 0, 1, 0, 0},
   {&__pyx_kp_u_2, __pyx_k_2, sizeof(__pyx_k_2), 0, 1, 0, 0},
   {&__pyx_kp_u_3, __pyx_k_3, sizeof(__pyx_k_3), 0, 1, 0, 0},
@@ -4204,7 +4205,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_u_t, __pyx_k_t, sizeof(__pyx_k_t), 0, 1, 0, 1},
   {&__pyx_n_s_test, __pyx_k_test, sizeof(__pyx_k_test), 0, 0, 1, 1},
   {&__pyx_n_s_text, __pyx_k_text, sizeof(__pyx_k_text), 0, 0, 1, 1},
-  {&__pyx_n_s_tilda, __pyx_k_tilda, sizeof(__pyx_k_tilda), 0, 0, 1, 1},
+  {&__pyx_n_s_tilde, __pyx_k_tilde, sizeof(__pyx_k_tilde), 0, 0, 1, 1},
   {&__pyx_n_u_u, __pyx_k_u, sizeof(__pyx_k_u), 0, 1, 0, 1},
   {&__pyx_n_u_v, __pyx_k_v, sizeof(__pyx_k_v), 0, 1, 0, 1},
   {&__pyx_n_s_version, __pyx_k_version, sizeof(__pyx_k_version), 0, 0, 1, 1},
@@ -4231,11 +4232,11 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   /* "neologdn.pyx":12
  * from libcpp.unordered_set cimport unordered_set
  * 
- * VERSION = (0, 5)             # <<<<<<<<<<<<<<
- * __version__ = '0.5'
+ * VERSION = (0, 5, 1)             # <<<<<<<<<<<<<<
+ * __version__ = '0.5.1'
  * 
  */
-  __pyx_tuple_ = PyTuple_Pack(2, __pyx_int_0, __pyx_int_5); if (unlikely(!__pyx_tuple_)) __PYX_ERR(0, 12, __pyx_L1_error)
+  __pyx_tuple_ = PyTuple_Pack(3, __pyx_int_0, __pyx_int_5, __pyx_int_1); if (unlikely(!__pyx_tuple_)) __PYX_ERR(0, 12, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple_);
   __Pyx_GIVEREF(__pyx_tuple_);
 
@@ -5313,6 +5314,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
 static CYTHON_SMALL_CODE int __Pyx_InitGlobals(void) {
   if (__Pyx_InitStrings(__pyx_string_tab) < 0) __PYX_ERR(0, 1, __pyx_L1_error);
   __pyx_int_0 = PyInt_FromLong(0); if (unlikely(!__pyx_int_0)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_int_1 = PyInt_FromLong(1); if (unlikely(!__pyx_int_1)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_int_5 = PyInt_FromLong(5); if (unlikely(!__pyx_int_5)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_int_128 = PyInt_FromLong(128); if (unlikely(!__pyx_int_128)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_int_12289 = PyInt_FromLong(12289L); if (unlikely(!__pyx_int_12289)) __PYX_ERR(0, 1, __pyx_L1_error)
@@ -5641,20 +5643,20 @@ if (!__Pyx_RefNanny) {
   /* "neologdn.pyx":12
  * from libcpp.unordered_set cimport unordered_set
  * 
- * VERSION = (0, 5)             # <<<<<<<<<<<<<<
- * __version__ = '0.5'
+ * VERSION = (0, 5, 1)             # <<<<<<<<<<<<<<
+ * __version__ = '0.5.1'
  * 
  */
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_VERSION, __pyx_tuple_) < 0) __PYX_ERR(0, 12, __pyx_L1_error)
 
   /* "neologdn.pyx":13
  * 
- * VERSION = (0, 5)
- * __version__ = '0.5'             # <<<<<<<<<<<<<<
+ * VERSION = (0, 5, 1)
+ * __version__ = '0.5.1'             # <<<<<<<<<<<<<<
  * 
  * ASCII = (
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_version, __pyx_kp_u_0_5) < 0) __PYX_ERR(0, 13, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_version, __pyx_kp_u_0_5_1) < 0) __PYX_ERR(0, 13, __pyx_L1_error)
 
   /* "neologdn.pyx":16
  * 

@@ -46,13 +46,13 @@ Usage
     # => 'かわいいいいいい'
     neologdn.normalize("無駄無駄無駄無駄ァ", repeat=1)
     # => '無駄ァ'
-    neologdn.normalize("1995〜2001年", tilda="normalize")
+    neologdn.normalize("1995〜2001年", tilde="normalize")
     # => '1995~2001年'
-    neologdn.normalize("1995~2001年", tilda="normalize_zenkaku")
+    neologdn.normalize("1995~2001年", tilde="normalize_zenkaku")
     # => '1995〜2001年'
-    neologdn.normalize("1995〜2001年", tilda="ignore")  # Don't convert tilda
+    neologdn.normalize("1995〜2001年", tilde="ignore")  # Don't convert tilde
     # => '1995〜2001年'
-    neologdn.normalize("1995〜2001年", tilda="remove")
+    neologdn.normalize("1995〜2001年", tilde="remove")
     # => '19952001年'
     neologdn.normalize("1995〜2001年")  # Default parameter
     # => '19952001年'
