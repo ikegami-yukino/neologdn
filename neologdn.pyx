@@ -161,7 +161,14 @@ cpdef unicode normalize(unicode text, int repeat=0, bint remove_space=True,
                 else:
                     buf[pos] = c = 'ー'
             elif c in TILDES:
-                continue
+                if tilda == 'ignore':
+                    buf[pos] = c
+                elif tilda == 'normalize':
+                    buf[pos] = c = '~'
+                elif tilda == 'normalize_zenkaku':
+                    buf[pos] = c = '〜'
+                else:
+                    continue
             else:
                 if conversion_map.count(c):
                     c = conversion_map[c]
