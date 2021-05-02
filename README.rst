@@ -1,7 +1,7 @@
 neologdn
 ===========
 
-|travis| |pyversion| |version| |landscape|  |license|
+|travis| |pyversion| |version| |license|
 
 neologdn is a Japanese text normalizer for `mecab-neologd <https://github.com/neologd/mecab-ipadic-neologd>`_.
 
@@ -46,6 +46,16 @@ Usage
     # => 'かわいいいいいい'
     neologdn.normalize("無駄無駄無駄無駄ァ", repeat=1)
     # => '無駄ァ'
+    neologdn.normalize("1995〜2001年", tilda="normalize")
+    # => '1995~2001年'
+    neologdn.normalize("1995~2001年", tilda="normalize_zenkaku")
+    # => '1995〜2001年'
+    neologdn.normalize("1995〜2001年", tilda="ignore")  # Don't convert tilda
+    # => '1995〜2001年'
+    neologdn.normalize("1995〜2001年", tilda="remove")
+    # => '19952001年'
+    neologdn.normalize("1995〜2001年")  # Default parameter
+    # => '19952001年'
 
 
 Benchmark
@@ -78,6 +88,12 @@ License
 Apache Software License.
 
 
+Contribution
+------------
+
+Contributions are welcome! See: https://github.com/ikegami-yukino/neologdn/blob/master/.github/CONTRIBUTING.md
+
+
 .. |travis| image:: https://travis-ci.org/ikegami-yukino/neologdn.svg?branch=master
     :target: https://travis-ci.org/ikegami-yukino/neologdn
     :alt: travis-ci.org
@@ -87,10 +103,6 @@ Apache Software License.
     :alt: latest version
 
 .. |pyversion| image:: https://img.shields.io/pypi/pyversions/neologdn.svg
-
-.. |landscape| image:: https://landscape.io/github/ikegami-yukino/neologdn/master/landscape.svg?style=flat
-   :target: https://landscape.io/github/ikegami-yukino/neologdn/master
-   :alt: Code Health
 
 .. |license| image:: https://img.shields.io/pypi/l/neologdn.svg
     :target: http://pypi.python.org/pypi/neologdn/
