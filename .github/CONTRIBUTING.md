@@ -72,6 +72,6 @@ Before you submit a pull request, check that it meets these guidelines:
 
 - The pull request should include tests.
 - If the pull request adds functionality, the docs should be updated. Put your new functionality into a function with a docstring, and add example about the feature to the `README.rst`.
-- The pull request should work for Python 2.7, 3.4, 3.5, 3.6, 3.7, and 3.8. Check https://travis-ci.org/ikegami-yukino/neologdn/pull_requests and make sure that the tests pass for all supported Python versions.
+- The pull request should work for Python 3.6, 3.7, 3.8, and 3.9. Check https://travis-ci.org/ikegami-yukino/neologdn/pull_requests and make sure that the tests pass for all supported Python versions.
 - The title of pull request should be written in English.
 - The message/comment about pull request should be written in English or Japanese.
