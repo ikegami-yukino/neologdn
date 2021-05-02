@@ -1,4 +1,5 @@
 # distutils: language=c++
+# cython: language_level=3
 # -*- coding: utf-8 -*-
 
 from __future__ import unicode_literals
@@ -89,17 +90,13 @@ char_codes = itertools.chain(
     range(12289, 12352),  # CJK SYMBOLS AND PUNCTUATION
     range(65280, 65520)   # HALFWIDTH AND FULLWIDTH FORMS
 )
-if version_info >= (3, 0):
-    chr_func = chr
-else:
-    chr_func = locals()['__builtins__'].unichr
-for c in map(chr_func, char_codes):
+for c in map(chr, char_codes):
     blocks.insert(c)
 
-for c in map(chr_func, range(128)):
+for c in map(chr, range(128)):
     basic_latin.insert(c)
 
-del ASCII, KANA, DIGIT, KANA_TEN, KANA_MARU, char_codes, version_info, chr_func
+del ASCII, KANA, DIGIT, KANA_TEN, KANA_MARU, char_codes, version_info
 
 
 cpdef unicode shorten_repeat(unicode text, int repeat_threshould, int max_repeat_substr_length=8):
