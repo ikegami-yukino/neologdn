@@ -1,7 +1,7 @@
 neologdn
 ===========
 
-|travis| |pyversion| |version| |license|
+|downloads| |pyversion| |version| |license|
 
 neologdn is a Japanese text normalizer for `mecab-neologd <https://github.com/neologd/mecab-ipadic-neologd>`_.
 
@@ -68,15 +68,15 @@ Benchmark
     import normalize_neologd
 
     %timeit normalize(normalize_neologd.normalize_neologd)
-    # => 1 loop, best of 3: 18.3 s per loop
+    # => 9.55 s ± 29.4 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
 
 
     import neologdn
     %timeit normalize(neologdn.normalize)
-    # => 1 loop, best of 3: 9.05 s per loop
+    # => 6.66 s ± 35.8 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
 
 
-neologdn is about x2 faster than sample code.
+neologdn is about x1.43 faster than sample code.
 
 details are described as the below notebook:
 https://github.com/ikegami-yukino/neologdn/blob/master/benchmark/benchmark.ipynb
@@ -93,10 +93,8 @@ Contribution
 
 Contributions are welcome! See: https://github.com/ikegami-yukino/neologdn/blob/master/.github/CONTRIBUTING.md
 
-
-.. |travis| image:: https://travis-ci.org/ikegami-yukino/neologdn.svg?branch=master
-    :target: https://travis-ci.org/ikegami-yukino/neologdn
-    :alt: travis-ci.org
+.. |downloads| image:: https://static.pepy.tech/personalized-badge/neologdn?period=total&units=international_system&left_color=black&right_color=orange&left_text=Downloads
+ :target: https://pepy.tech/project/neologdn
 
 .. |version| image:: https://img.shields.io/pypi/v/neologdn.svg
     :target: http://pypi.python.org/pypi/neologdn/
