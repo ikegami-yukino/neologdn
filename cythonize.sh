@@ -3,4 +3,4 @@
 if ! `type cython &> /dev/null`; then
     pip install cython
 fi
-cython --cplus neologdn.pyx
+cython --cplus -3 neologdn.pyx

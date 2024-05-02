@@ -2,15 +2,22 @@
 # cython: language_level=3
 # -*- coding: utf-8 -*-
 
-from __future__ import unicode_literals
 import itertools
 from sys import version_info
 from libc.stdlib cimport malloc, free
 from libcpp.unordered_map cimport unordered_map
 from libcpp.unordered_set cimport unordered_set
 
-VERSION = (0, 5, 2)
-__version__ = '0.5.2'
+VERSION = (0, 5, 3)
+__version__ = '0.5.3'
+
+cdef extern from "Python.h":
+    object PyUnicode_DecodeUTF32(const char *s, Py_ssize_t size, const char *errors, int *byteorder)
+
+
+cdef py_ucs4_to_unicode(Py_UCS4 *ucs4_ptr, Py_ssize_t length):
+    return PyUnicode_DecodeUTF32(<char*>ucs4_ptr, sizeof(Py_UCS4)*length, NULL, NULL)
+
 
 ASCII = (
     ('ａ', 'a'), ('ｂ', 'b'), ('ｃ', 'c'), ('ｄ', 'd'), ('ｅ', 'e'),
@@ -71,8 +78,8 @@ TILDES = ('~', '∼', '∾', '〜', '〰', '～')
 
 SPACE = (' ', '　')
 
-cdef unordered_map[Py_UNICODE, Py_UNICODE] conversion_map, kana_ten_map, kana_maru_map
-cdef unordered_set[Py_UNICODE] blocks, basic_latin
+cdef unordered_map[Py_UCS4, Py_UCS4] conversion_map, kana_ten_map, kana_maru_map
+cdef unordered_set[Py_UCS4] blocks, basic_latin
 
 for (before, after) in (ASCII + DIGIT + KANA):
     conversion_map[before] = after
@@ -92,6 +99,7 @@ char_codes = itertools.chain(
 )
 for c in map(chr, char_codes):
     blocks.insert(c)
+
 
 for c in map(chr, range(128)):
     basic_latin.insert(c)
@@ -131,9 +139,9 @@ cpdef unicode shorten_repeat(unicode text, int repeat_threshould, int max_repeat
 
 cpdef unicode normalize(unicode text, int repeat=0, bint remove_space=True,
                         int max_repeat_substr_length=8, unicode tilde='remove'):
-    cdef Py_UNICODE *buf = <Py_UNICODE *>malloc(sizeof(Py_UNICODE) * (len(text) + 1))
+    cdef Py_UCS4 *buf = <Py_UCS4 *>malloc(sizeof(Py_UCS4) * (len(text) + 1))
 
-    cdef Py_UNICODE c, prev = '\0'
+    cdef Py_UCS4 c, prev = '\0'
     cdef int pos = 0
     cdef bint lattin_space = False
 
@@ -189,7 +197,7 @@ cpdef unicode normalize(unicode text, int repeat=0, bint remove_space=True,
         pos -= 1
     buf[pos] = '\0'
 
-    cdef unicode ret = buf
+    cdef unicode ret = py_ucs4_to_unicode(buf, pos)
     free(buf)
 
     if repeat:
