@@ -163,11 +163,13 @@ cpdef unicode normalize(unicode text, int repeat=0, bint remove_space=True,
                     continue
                 else:
                     buf[pos] = c = '-'
+                lattin_space = False
             elif c in CHOONPUS:
                 if prev == 'ー':
                     continue
                 else:
                     buf[pos] = c = 'ー'
+                lattin_space = False
             elif c in TILDES:
                 if tilde == 'ignore':
                     buf[pos] = c
@@ -177,6 +179,7 @@ cpdef unicode normalize(unicode text, int repeat=0, bint remove_space=True,
                     buf[pos] = c = '〜'
                 else:
                     continue
+                lattin_space = False
             else:
                 if conversion_map.count(c):
                     c = conversion_map[c]
