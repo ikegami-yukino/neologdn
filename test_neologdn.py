@@ -53,6 +53,12 @@ class TestNeologdn(unittest.TestCase):
         self.assertEqual(normalize('1467〜1487年', tilde='remove'), '14671487年')
         self.assertEqual(normalize('1467〜1487年'), '14671487年')
 
+    def test_tilde_boundary_handling(self):
+        self.assertEqual(normalize('A ˗あ'), 'A -あ')
+        self.assertEqual(normalize('A ーあ'), 'A ーあ')
+        self.assertEqual(normalize('A ～あ', tilde='normalize'), 'A ~あ')
+        self.assertEqual(normalize('A ~あ', tilde='normalize_zenkaku'), 'A 〜あ')
+        self.assertEqual(normalize('A ～あ'), 'Aあ')
 
 if __name__ == '__main__':
     unittest.main()
