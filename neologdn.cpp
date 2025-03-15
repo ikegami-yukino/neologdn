@@ -2432,6 +2432,7 @@ static const char __pyx_k_name[] = "__name__";
 static const char __pyx_k_spec[] = "__spec__";
 static const char __pyx_k_test[] = "__test__";
 static const char __pyx_k_text[] = "text";
+static const char __pyx_k_0_5_4[] = "0.5.4";
 static const char __pyx_k_ASCII[] = "ASCII";
 static const char __pyx_k_DIGIT[] = "DIGIT";
 static const char __pyx_k_SPACE[] = "SPACE";
@@ -2451,7 +2452,6 @@ static const char __pyx_k_CHOONPUS[] = "CHOONPUS";
 static const char __pyx_k_KANA_TEN[] = "KANA_TEN";
 static const char __pyx_k_add_note[] = "add_note";
 static const char __pyx_k_neologdn[] = "neologdn";
-static const char __pyx_k_0_5_4_dev[] = "0.5.4.dev";
 static const char __pyx_k_KANA_MARU[] = "KANA_MARU";
 static const char __pyx_k_itertools[] = "itertools";
 static const char __pyx_k_normalize[] = "normalize";
@@ -2560,7 +2560,7 @@ static __pyx_mstatetype *__pyx_mstate_global = &__pyx_mstate_global_static;
 /* #### Code section: constant_name_defines ### */
 #define __pyx_kp_u_ __pyx_string_tab[0]
 #define __pyx_kp_u_0 __pyx_string_tab[1]
-#define __pyx_kp_u_0_5_4_dev __pyx_string_tab[2]
+#define __pyx_kp_u_0_5_4 __pyx_string_tab[2]
 #define __pyx_kp_u_1 __pyx_string_tab[3]
 #define __pyx_kp_u_2 __pyx_string_tab[4]
 #define __pyx_kp_u_3 __pyx_string_tab[5]
@@ -5153,7 +5153,7 @@ __Pyx_RefNannySetupContext("PyInit_neologdn", 0);
  * from libcpp.unordered_set cimport unordered_set
  * 
  * VERSION = (0, 5, 4)             # <<<<<<<<<<<<<<
- * __version__ = '0.5.4.dev'
+ * __version__ = '0.5.4'
  * 
 */
   if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_VERSION, __pyx_mstate_global->__pyx_tuple[0]) < 0) __PYX_ERR(0, 11, __pyx_L1_error)
@@ -5161,11 +5161,11 @@ __Pyx_RefNannySetupContext("PyInit_neologdn", 0);
   /* "neologdn.pyx":12
  * 
  * VERSION = (0, 5, 4)
- * __version__ = '0.5.4.dev'             # <<<<<<<<<<<<<<
+ * __version__ = '0.5.4'             # <<<<<<<<<<<<<<
  * 
  * cdef extern from "Python.h":
 */
-  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_version, __pyx_mstate_global->__pyx_kp_u_0_5_4_dev) < 0) __PYX_ERR(0, 12, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_version, __pyx_mstate_global->__pyx_kp_u_0_5_4) < 0) __PYX_ERR(0, 12, __pyx_L1_error)
 
   /* "neologdn.pyx":23
  * 
@@ -6124,7 +6124,7 @@ static const char * const __pyx_string_tab_encodings[] = { 0 };
 static const __Pyx_StringTabEntry __pyx_string_tab[] = {
   {__pyx_k_, sizeof(__pyx_k_), 0, 1, 0}, /* PyObject cname: __pyx_kp_u_ */
   {__pyx_k_0, sizeof(__pyx_k_0), 0, 1, 0}, /* PyObject cname: __pyx_kp_u_0 */
-  {__pyx_k_0_5_4_dev, sizeof(__pyx_k_0_5_4_dev), 0, 1, 0}, /* PyObject cname: __pyx_kp_u_0_5_4_dev */
+  {__pyx_k_0_5_4, sizeof(__pyx_k_0_5_4), 0, 1, 0}, /* PyObject cname: __pyx_kp_u_0_5_4 */
   {__pyx_k_1, sizeof(__pyx_k_1), 0, 1, 0}, /* PyObject cname: __pyx_kp_u_1 */
   {__pyx_k_2, sizeof(__pyx_k_2), 0, 1, 0}, /* PyObject cname: __pyx_kp_u_2 */
   {__pyx_k_3, sizeof(__pyx_k_3), 0, 1, 0}, /* PyObject cname: __pyx_kp_u_3 */
@@ -6567,7 +6567,7 @@ static int __Pyx_InitCachedConstants(__pyx_mstatetype *__pyx_mstate) {
  * from libcpp.unordered_set cimport unordered_set
  * 
  * VERSION = (0, 5, 4)             # <<<<<<<<<<<<<<
- * __version__ = '0.5.4.dev'
+ * __version__ = '0.5.4'
  * 
 */
   __pyx_mstate_global->__pyx_tuple[0] = PyTuple_Pack(3, __pyx_mstate_global->__pyx_int_0, __pyx_mstate_global->__pyx_int_5, __pyx_mstate_global->__pyx_int_4); if (unlikely(!__pyx_mstate_global->__pyx_tuple[0])) __PYX_ERR(0, 11, __pyx_L1_error)
