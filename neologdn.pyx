@@ -8,8 +8,8 @@ from libc.stdlib cimport malloc, free
 from libcpp.unordered_map cimport unordered_map
 from libcpp.unordered_set cimport unordered_set
 
-VERSION = (0, 5, 3)
-__version__ = '0.5.3'
+VERSION = (0, 5, 4)
+__version__ = '0.5.4'
 
 cdef extern from "Python.h":
     object PyUnicode_DecodeUTF32(const char *s, Py_ssize_t size, const char *errors, int *byteorder)

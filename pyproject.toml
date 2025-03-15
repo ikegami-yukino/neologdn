@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "neologdn"
+dynamic = ["version"]
+authors = [
+    {name = "Yukino Ikegami", email = "yknikgm@gmail.com"}
+]
+maintainers = [
+    {name = "Yukino Ikegami", email = "yknikgm@gmail.com"}
+]
+description = "Japanese text normalizer for mecab-neologd"
+readme = "README.md"
+license = {file = "LICENSE"}
+keywords = ["MeCab", "NEologd", "japanese", "textpreprocessing", "JapaneseText"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Developers",
+    "Natural Language :: Japanese",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Cython",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Text Processing :: Linguistic",
+    "Topic :: Text Processing"
+]
+
+[project.urls]
+Homepage = "https://github.com/ikegami-yukino/neologdn"
+Repository = "https://github.com/ikegami-yukino/neologdn.git"
