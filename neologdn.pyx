@@ -71,6 +71,7 @@ KANA_MARU = (
     ('ハ', 'パ'), ('ヒ', 'ピ'), ('フ', 'プ'), ('ヘ', 'ペ'), ('ホ', 'ポ'),
     ('は', 'ぱ'), ('ひ', 'ぴ'), ('ふ', 'ぷ'), ('へ', 'ぺ'), ('ほ', 'ぽ')
 )
+SYMBOLS = (('“', '"'),)
 
 HIPHENS = ('˗', '֊', '‐', '‑', '‒', '–', '⁃', '⁻', '₋', '−')
 CHOONPUS = ('﹣', '－', 'ｰ', '—', '―', '─', '━', 'ー')
@@ -81,7 +82,7 @@ SPACE = (' ', '　')
 cdef unordered_map[Py_UCS4, Py_UCS4] conversion_map, kana_ten_map, kana_maru_map
 cdef unordered_set[Py_UCS4] blocks, basic_latin
 
-for (before, after) in (ASCII + DIGIT + KANA):
+for (before, after) in (ASCII + DIGIT + KANA + SYMBOLS):
     conversion_map[before] = after
 
 for (before, after) in KANA_TEN:
