@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-from codecs import open
-import re
-from setuptools import setup, Extension
 import platform
+import re
+
+from setuptools import Extension, setup
 
 with open('neologdn.cpp', 'r', encoding='utf8') as f:
     version = re.compile(r".*__version__ = '(.*?)'",

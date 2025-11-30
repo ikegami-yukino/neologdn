@@ -20,7 +20,6 @@ classifiers = [
     "Intended Audience :: Science/Research",
     "Intended Audience :: Developers",
     "Natural Language :: Japanese",
-    "License :: OSI Approved :: Apache Software License",
     "Programming Language :: Cython",
     "Programming Language :: Python",
     "Programming Language :: Python :: 3",

@@ -1,6 +1,8 @@
 # encoding: utf8
 from __future__ import unicode_literals
+
 import unittest
+
 from neologdn import normalize, shorten_repeat
 
 
