@@ -32,7 +32,7 @@ ASCII = (
     ('Ｕ', 'U'), ('Ｖ', 'V'), ('Ｗ', 'W'), ('Ｘ', 'X'), ('Ｙ', 'Y'),
     ('Ｚ', 'Z'),
     ('！', '!'), ('”', '"'), ('＃', '#'), ('＄', '$'), ('％', '%'),
-    ('＆', '&'), ('’', '\''), ('（', '('), ('）', ')'), ('＊', '*'),
+    ('＆', '&'), ('’', "'"), ('（', '('), ('）', ')'), ('＊', '*'),
     ('＋', '+'), ('，', ','), ('−', '-'), ('．', '.'), ('／', '/'),
     ('：', ':'), ('；', ';'), ('＜', '<'), ('＝', '='), ('＞', '>'),
     ('？', '?'), ('＠', '@'), ('［', '['), ('¥', '\\'), ('］', ']'),
@@ -139,6 +139,8 @@ cpdef unicode shorten_repeat(unicode text, int repeat_threshould, int max_repeat
 
 cpdef unicode normalize(unicode text, int repeat=0, bint remove_space=True,
                         int max_repeat_substr_length=8, unicode tilde='remove'):
+    if not text:
+        return ''
     cdef Py_UCS4 *buf = <Py_UCS4 *>malloc(sizeof(Py_UCS4) * (len(text) + 1))
 
     cdef Py_UCS4 c, prev = '\0'
@@ -148,13 +150,14 @@ cpdef unicode normalize(unicode text, int repeat=0, bint remove_space=True,
     for c in text:
         if c in SPACE:
             c = ' '
-            if (prev == ' ' or blocks.count(prev)) and remove_space:
+            if (pos == 0 or prev == ' ' or blocks.count(prev)) and remove_space:
                 continue
             elif prev != '*' and pos > 0 and basic_latin.count(prev):
                 lattin_space = True
                 buf[pos] = c
             elif remove_space:
-                pos -= 1
+                if pos > 0:
+                    pos -= 1
             else:
                 buf[pos] = c
         else:
@@ -183,20 +186,20 @@ cpdef unicode normalize(unicode text, int repeat=0, bint remove_space=True,
             else:
                 if conversion_map.count(c):
                     c = conversion_map[c]
-                if c == 'ﾞ' and kana_ten_map.count(prev):
+                if c == 'ﾞ' and pos > 0 and kana_ten_map.count(prev):
                     pos -= 1
                     c = kana_ten_map[prev]
-                elif c == 'ﾟ' and kana_maru_map.count(prev):
+                elif c == 'ﾟ' and pos > 0 and kana_maru_map.count(prev):
                     pos -= 1
                     c = kana_maru_map[prev]
-                if lattin_space and blocks.count(c) and remove_space:
+                if lattin_space and pos > 0 and blocks.count(c) and remove_space:
                     pos -= 1
                 lattin_space = False
                 buf[pos] = c
         prev = c
         pos += 1
 
-    if buf[pos-1] == ' ':
+    if pos > 0 and buf[pos-1] == ' ':
         pos -= 1
     buf[pos] = '\0'
 
