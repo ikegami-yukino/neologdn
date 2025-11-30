@@ -102,6 +102,11 @@ Apache Software License.
 
 ## CHANGES
 
+### 0.5.5 (2025-12-01)
+
+- Support Python 3.14 and 3.14t (free-treaded)
+- Normalize the left double quotation ” (U+201C) to double quotation " (U+0022)
+
 ### 0.5.4 (2025-03-15)
 
 - Support Python 3.13
