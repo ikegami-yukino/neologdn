@@ -3,13 +3,12 @@
 # -*- coding: utf-8 -*-
 
 import itertools
-from sys import version_info
 from libc.stdlib cimport malloc, free
 from libcpp.unordered_map cimport unordered_map
 from libcpp.unordered_set cimport unordered_set
 
-VERSION = (0, 5, 4)
-__version__ = '0.5.4'
+VERSION = (0, 5, 5)
+__version__ = '0.5.5'
 
 cdef extern from "Python.h":
     object PyUnicode_DecodeUTF32(const char *s, Py_ssize_t size, const char *errors, int *byteorder)
@@ -105,7 +104,7 @@ for c in map(chr, char_codes):
 for c in map(chr, range(128)):
     basic_latin.insert(c)
 
-del ASCII, KANA, DIGIT, KANA_TEN, KANA_MARU, char_codes, version_info
+del ASCII, KANA, DIGIT, KANA_TEN, KANA_MARU, char_codes
 
 
 cpdef unicode shorten_repeat(unicode text, int repeat_threshould, int max_repeat_substr_length=8):
