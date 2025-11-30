@@ -1,4 +1,4 @@
-env_list =  ["format", "3.14", "3.14t", "3.13", "3.12", "3.11", "3.10", "3.9"]
+env_list =  ["cythonize", "format", "3.14", "3.14t", "3.13", "3.12", "3.11", "3.10", "3.9"]
 parallel_show_output = true
 
 [env.format]
@@ -11,6 +11,14 @@ commands = [
     [ "ruff", "check", "--select", "I", "--diff", "--fix", "setup.py" ],
     [ "bash", "-n", "cythonize.sh" ],
     [ "python", "-m", "readme_renderer", "README.md", "-o", "/dev/null" ]
+]
+
+[env.cythonize]
+description = "Cythonize"
+deps = ["cython"]
+skip_install = true
+commands = [
+    ["cython", "--cplus", "-3", "neologdn.pyx"]
 ]
 
 [env_run_base]
