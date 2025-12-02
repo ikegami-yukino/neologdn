@@ -13,8 +13,9 @@ maintainers = [
 ]
 description = "Japanese text normalizer for mecab-neologd"
 readme = "README.md"
-license = {file = "LICENSE"}
-keywords = ["MeCab", "NEologd", "japanese", "textpreprocessing", "JapaneseText"]
+license = "Apache-2.0"
+license-files = ["LICEN[CS]E*"]
+keywords = ["MeCab", "NEologd", "japanese", "textpreprocessing", "JapaneseText", "normalize"]
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Science/Research",
@@ -29,6 +30,8 @@ classifiers = [
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Programming Language :: Python :: Free Threading",
     "Topic :: Text Processing :: Linguistic",
     "Topic :: Text Processing"
 ]
