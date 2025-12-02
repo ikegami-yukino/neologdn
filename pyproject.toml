@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "neologdn"
-dynamic = ["version"]
+dynamic = ["version", "license"]
 authors = [
     {name = "Yukino Ikegami", email = "yknikgm@gmail.com"}
 ]
@@ -13,7 +13,6 @@ maintainers = [
 ]
 description = "Japanese text normalizer for mecab-neologd"
 readme = "README.md"
-license = { text = "Apache-2.0" }
 keywords = ["MeCab", "NEologd", "japanese", "textpreprocessing", "JapaneseText", "normalize"]
 classifiers = [
     "Development Status :: 4 - Beta",

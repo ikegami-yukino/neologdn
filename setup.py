@@ -19,5 +19,6 @@ setup(name='neologdn',
           Extension('neologdn', ['neologdn.cpp'],
                     language='c++',
                     extra_compile_args=extra_compile_args)
-      ]
+      ],
+      license="Apache-2.0",
 )
