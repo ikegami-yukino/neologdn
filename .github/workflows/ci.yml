@@ -34,3 +34,7 @@ jobs:
       - run: pip install pytest pytest-asyncio
       - run: pip install --editable .
       - run: pytest
+      - if: matrix.python-version == '3.13t' || matrix.python-version == '3.14t'
+        run: |
+          pip install pytest-run-parallel
+          pytest --iterations=4 --parallel-threads=auto

@@ -21,6 +21,10 @@ commands = [
     ["cython", "--cplus", "-3", "neologdn.pyx"]
 ]
 
+[env.3.14t]
+deps = ["pytest-run-parallel"]
+commands = [["pytest", "--iterations=4", "--parallel-threads=auto", "test_neologdn.py"]]
+
 [env_run_base]
 description = "run unit tests"
 commands = [["python", { replace = "posargs", default = ["test_neologdn.py"], extend = true }]]
