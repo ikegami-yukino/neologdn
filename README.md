@@ -1,6 +1,6 @@
 # neologdn
 
-[![PyPI Downloads](https://static.pepy.tech/badge/neologdn)](https://pepy.tech/projects/neologdn)[![PyPI - Version](https://img.shields.io/pypi/v/neologdn)](https://pypi.org/project/neologdn/)![PyPI - Python Version](https://img.shields.io/pypi/pyversions/neologdn)![PyPI - License](https://img.shields.io/pypi/l/neologdn)
+[![PyPI Downloads](https://static.pepy.tech/badge/neologdn)](https://pepy.tech/projects/neologdn)[![PyPI - Version](https://img.shields.io/pypi/v/neologdn)](https://pypi.org/project/neologdn/)![PyPI - Python Version](https://img.shields.io/pypi/pyversions/neologdn)![PyPI - License](https://img.shields.io/pypi/l/neologdn)![GitHub code search count](https://img.shields.io/github/search?query=import%20neologdn&label=Used%20in%20GitHub&link=https%3A%2F%2Fgithub.com%2Fsearch%3Fq%3Dimport%2Bneologdn%26type%3Dcode)
 
 neologdn is a Japanese text normalizer for [mecab-neologd](https://github.com/neologd/mecab-ipadic-neologd).
 
