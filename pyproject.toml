@@ -14,7 +14,6 @@ maintainers = [
 description = "Japanese text normalizer for mecab-neologd"
 readme = "README.md"
 license = "Apache-2.0"
-license-files = ["LICEN[CS]E*"]
 keywords = ["MeCab", "NEologd", "japanese", "textpreprocessing", "JapaneseText", "normalize"]
 classifiers = [
     "Development Status :: 4 - Beta",
