@@ -1,5 +1,6 @@
 # distutils: language=c++
 # cython: language_level=3
+# cython: freethreading_compatible=True
 # -*- coding: utf-8 -*-
 
 import itertools
@@ -7,8 +8,8 @@ from libc.stdlib cimport malloc, free
 from libcpp.unordered_map cimport unordered_map
 from libcpp.unordered_set cimport unordered_set
 
-VERSION = (0, 5, 5)
-__version__ = '0.5.5'
+VERSION = (0, 5, 6)
+__version__ = '0.5.6'
 
 cdef extern from "Python.h":
     object PyUnicode_DecodeUTF32(const char *s, Py_ssize_t size, const char *errors, int *byteorder)

@@ -1,6 +1,6 @@
 # neologdn
 
-[![PyPI Downloads](https://static.pepy.tech/badge/neologdn)](https://pepy.tech/projects/neologdn)![PyPI - Version](https://img.shields.io/pypi/v/neologdn)![PyPI - Python Version](https://img.shields.io/pypi/pyversions/neologdn)![PyPI - License](https://img.shields.io/pypi/l/neologdn)
+[![PyPI Downloads](https://static.pepy.tech/badge/neologdn)](https://pepy.tech/projects/neologdn)[![PyPI - Version](https://img.shields.io/pypi/v/neologdn)](https://pypi.org/project/neologdn/)![PyPI - Python Version](https://img.shields.io/pypi/pyversions/neologdn)[![PyPI - License](https://img.shields.io/pypi/l/neologdn)](https://github.com/ikegami-yukino/neologdn/blob/master/LICENSE)![GitHub code search count](https://img.shields.io/github/search?query=import%20neologdn%20language%3Apython&label=Used%20in%20GitHub&link=https%3A%2F%2Fgithub.com%2Fsearch%3Fq%3Dimport%2Bneologdn%2Blanguage%253Apython%26type%3Dcode)
 
 neologdn is a Japanese text normalizer for [mecab-neologd](https://github.com/neologd/mecab-ipadic-neologd).
 
@@ -19,7 +19,7 @@ NOTE: Installing this module requires C++11 compiler.
 pip install neologdn
 ```
 
-If setuptools is not installed, you must install it:
+If `setuptools` is not installed, you must install it:
 
 ```sh
 pip install setuptools
@@ -102,7 +102,7 @@ Apache Software License.
 
 ## CHANGES
 
-### 0.5.5 (2025-12-01)
+### 0.5.6 (2025-12-02)
 
 - Support Python 3.14 and 3.14t (free-treaded)
 - Normalize the left double quotation ” (U+201C) to double quotation " (U+0022)
