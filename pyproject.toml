@@ -13,7 +13,7 @@ maintainers = [
 ]
 description = "Japanese text normalizer for mecab-neologd"
 readme = "README.md"
-license = {file = "LICENSE"}
+license = { text = "Apache-2.0" }
 keywords = ["MeCab", "NEologd", "japanese", "textpreprocessing", "JapaneseText", "normalize"]
 classifiers = [
     "Development Status :: 4 - Beta",
@@ -38,3 +38,6 @@ classifiers = [
 [project.urls]
 Homepage = "https://github.com/ikegami-yukino/neologdn"
 Repository = "https://github.com/ikegami-yukino/neologdn.git"
+
+[tool.setuptools]
+license-files = ["LICENSE"]
